@@ -1,7 +1,7 @@
 <?php
 
-require_once "models/modelProduct.php";
-require_once "models/modelCategory.php";
+require_once "models/_modelProduct.php";
+require_once "models/_modelCategory.php";
 
 class home
 {
@@ -17,10 +17,10 @@ class home
 
     public function index()
     {
-        $categories = $this->model->getCategoryList();
+        $categories = $this->ModelCategory->getCategoryList();
         $products = array();
         foreach ($categories as $category) {
-            $temp = $this->model->getProductListByCategory($category->getId());
+            $temp = $this->ModelProduct->getProductListByCategory($category->getId());
             array_push($products, $temp);
         }
 
