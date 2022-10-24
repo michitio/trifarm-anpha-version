@@ -17,10 +17,10 @@
 
         <div class="content">
             <?php
-            if ($index == 0)
-                include_once "productlist.php";
-            else
-                include_once "detailproduct.php";
+            // if ($index == 0)
+            include_once "productlist.php";
+            // else
+            //     include_once "detailproduct.php";
             ?>
         </div>
     </div>

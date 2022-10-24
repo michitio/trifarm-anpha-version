@@ -6,6 +6,23 @@ OOP và một model chung để query dữ liệu
 trong model chung gọi đến db_module để query như bình thường
 config hỗ trợ lưu trữ tên database cho db_module
 
-ở tầng view có: một trang basepage chứa header, footer và main (mỗi cái sẽ trong một folder riêng)
-tuy nhiên các folder này chỉ chứa file php, các file khác lưu trữ trong thư mục assets
-folder main chứa: các folder search, home, detail - ở đây sẽ chứa các file cho content tương ứng
+ở tầng view có: 
+basepage.php
+header
+    |_files
+    |_...
+footer
+    |_files
+    |_...
+main
+    |_search
+        |_files
+        |_...
+    |_home
+        |_files
+        |_...
+    |_detail
+        |_files
+        |_...
+    
+folder chỉ chứa file php, các file khác lưu trữ trong thư mục assets

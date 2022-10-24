@@ -1,9 +1,8 @@
 <?php
-require_once "models/product.php";
-require_once "models/category.php";
 require_once "modules/db_module.php";
+require_once "models/product.php";
 
-class Model
+class ModelProduct
 {
     public function getProductList()
     {
@@ -38,24 +37,4 @@ class Model
     }
 
 
-    public function getCategoryList()
-    {
-        $result = executeQuery("SELECT * FROM tb_category");
-        $data = array();
-        while ($rows = mysqli_fetch_assoc($result)) {
-            $category = new Category($rows["id"], $rows["name"]);
-            array_push($data, $category);
-        }
-        return $data;
-    }
-
-    public function getCategory($id)
-    {
-        $allCategory = $this->getCategoryList();
-        foreach ($allCategory as $category)
-            if ($category->getId() === $id)
-                return $category;
-
-        return null;
-    }
 }
