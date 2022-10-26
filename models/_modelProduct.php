@@ -15,6 +15,17 @@ class ModelProduct
         return $data;
     }
 
+    public function getProductListLimit($num, $page)
+    {
+        $result = executeQuery("SELECT * FROM tb_product limit " . $page . ", " . $num);
+        $data = array();
+        while ($rows = mysqli_fetch_assoc($result)) {
+            $product = new Product($rows["id"], $rows["name"], $rows["img"], $rows["desc"], $rows["price"], $rows["id_category"]);
+            array_push($data, $product);
+        }
+        return $data;
+    }
+
     public function getProductListByCategory($id_cate)
     {
         $result = executeQuery("SELECT * FROM tb_product WHERE id_category=" . $id_cate);

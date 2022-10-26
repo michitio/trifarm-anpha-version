@@ -13,10 +13,16 @@ class Category
         return $this->name;
     }
 
-    public function __construct($id, $name)
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    public function __construct($id, $name, $img)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->img = $img;
     }
 
     public function __toString()

@@ -2,7 +2,7 @@
 
 class Controller
 {
-    public $model;        
+    public $model;
     protected $controller = 'home';
     protected $method = 'index';
     protected $params = [];
@@ -13,7 +13,7 @@ class Controller
 
     public function invoke()
     {
-/*         if (!isset($_GET["id"])) {
+        /*         if (!isset($_GET["id"])) {
             $index = 0;
 
             if (isset($_GET['category'])) {

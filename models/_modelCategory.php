@@ -9,7 +9,7 @@ class ModelCategory
         $result = executeQuery("SELECT * FROM tb_category");
         $data = array();
         while ($rows = mysqli_fetch_assoc($result)) {
-            $category = new Category($rows["id"], $rows["name"]);
+            $category = new Category($rows["id"], $rows["name"], $rows["img"]);
             array_push($data, $category);
         }
         return $data;
