@@ -1,127 +1,23 @@
-<link rel="stylesheet" href="./assets/css/base.css">
-<link rel="stylesheet" href="./assets/css/header.css">
-
-<link rel="stylesheet" href="./assets/fonts/fontawesome-v6/css/all.min.css">
-<link rel="stylesheet" href="./assets/fonts/remixicon_fonts/remixicon.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-
-
 <div class="header">
-    <div class="grid">
-        <nav class="navbar">
-            <ul class="navbar__list">
-                <!-- qr header -->
-                <li class="white-text-hover navbar__item navbar__item-qr">
-                    <span class="">Tải ứng dụng</span>
-                    <div class="navbar__qr">
-                        <img class="navbar__qr-img" src="assets/img/downloads-app/qr-download-app.png" alt="qr-download-app">
-                        <div class="navbar__qr-app">
-                            <a href="#" class="navbar__qr-link">
-                                <img class="navbar__qr-app-img" src="assets/img/downloads-app/app-store.png" alt="app-store">
-                            </a>
-                            <a href="#" class="navbar__qr-link">
-                                <img class="navbar__qr-app-img" src="assets/img/downloads-app/google-play.png" alt="google-play">
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <!-- kết nối header -->
-                <li class="navbar__item">
-                    <span class="anti-opacity-hover" style="margin-right: 4px;">Kết nối</span>
-                    <i class="opacity-hover navbar__icon fa-brands fa-square-facebook"></i>
-                    <i class="opacity-hover navbar__icon fa-brands fa-facebook-messenger"></i>
-                </li>
-            </ul>
+    <div class="container">
+        <div class="header__wrapper row gx-2">
 
-            <ul class="navbar__list">
+            <div class="header__search-mobile  col-1  d-md-none">
+                <label for="header__search-control" class="header__search-mobile">
+                    <i class="header__search-mobile-icon ri-search-line"></i>
+                </label>
+            </div>
 
-                <!-- noti header -->
-                <li class="white-text-hover navbar__item navbar__item-noti">
-
-                    <div class="">
-                        <i class="navbar__icon fa-solid fa-bell"></i>
-                        <span class="">Thông báo</span>
-                    </div>
-
-                    <div class="navbar__notify">
-                        <div class="anti-cursor-hover navbar__notify-header">Thông báo mới nhận</div>
-                        <ul class="navbar__notify-list">
-                            <li class="navbar__notify-item">
-                                <a href="" class="navbar__notify-link">
-                                    <img src="./assets/img/noti/hot-sale.png" alt="" class="navbar__notify-img">
-                                    <div class="navbar__notify-info">
-                                        <p class="navbar__notify-title">Sale 50% sản phẩm bạn có thể cần</p>
-                                        <p class="navbar__notify-content">Trái cây, trứng, sữa. Món
-                                            gì cũng có, gì cũng rẻ.</p>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="navbar__notify-item">
-                                <a href="" class="navbar__notify-link">
-                                    <img src="./assets/img/noti/chat.png" alt="" class="navbar__notify-img">
-                                    <div class="navbar__notify-info">
-                                        <p class="navbar__notify-title">TriFarm mách bạn</p>
-                                        <p class="navbar__notify-content">Sản phẩm bạn thích đang giảm sốc! Mua
-                                            sắm ngay!</p>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="navbar__notify-item">
-                                <a href="" class="navbar__notify-link">
-                                    <img src="./assets/img/noti/coupon.png" alt="" class="navbar__notify-img">
-                                    <div class="navbar__notify-info">
-                                        <p class="navbar__notify-title">Sale giữa tháng sắp đến cùng 4 voucher
-                                            hot</p>
-                                        <p class="navbar__notify-content">Lưu sớm voucher 15k đơn từ 99k. Săn
-                                            ngay voucher 800k đơn từ 2 triệu. Lưu nhanh voucher, săn deal cực
-                                            rẻ!</p>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="opacity-hover navbar__notify-footer">
-                            <a href="" class="navbar__notify-footer-link">
-                                Xem tất cả
-                            </a>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="opacity-hover navbar__item">
-                    <i class="navbar__icon fa-sharp fa-solid fa-circle-question"></i>
-                    Hỗ trợ
-                </li>
-
-                <li class="sign_up navbar__sign white-text-hover navbar__item navbar__item--sepa f-weight-500">
-                    Đăng ký</li>
-                <li class="sign_in navbar__sign white-text-hover navbar__item f-weight-500">Đăng nhập</li>
-
-                <li class="white-text-hover navbar__user navbar__item">
-                    <img src="./assets/img/avt-user/blue.png" alt="" class="navbar__user-avt">
-                    <span class="navbar__user-name">Nguyễn Như Trung</span>
-
-                    <ul class="navbar__user-menu">
-                        <li class="dark-hover navbar__user-item"><a href="">Tài khoản</a></li>
-                        <li class="dark-hover navbar__user-item"><a href="">Đơn mua</a></li>
-                        <li class="dark-hover navbar__user-item navbar__user-item-sepa"><a href="">Đăng xuất</a>
-                        </li>
-                    </ul>
-                </li>
-
-            </ul>
-        </nav>
-
-        <!-- header-with-search -->
-        <div class="header-with-search">
-            <div class="header__logo">
+            <div class="header__logo  offset-3 col-3  offset-md-0 col-md-2  col-lg-1-5">
                 <a href="/" class="header__logo-link">
                     <img class="header__logo-img" src="./assets/img/mybrand/trifarm.png" alt="TriFarm">
                 </a>
             </div>
 
-            <div class="header__search">
+            <input type="checkbox" hidden id="header__search-control">
+            <label for="header__search-control" class="header__search-panel d-md-none"></label>
+            <div class="header__search  d-none  d-md-flex  offset-lg-0-5 col-lg-7">
+
                 <div class="search__input-wraper">
                     <input class="search__input" placeholder="Tìm sản phẩm, danh mục hay thương hiệu mong muốn ..." type="text">
 
@@ -150,10 +46,45 @@
                     <i class=" search__icon ri-search-line"></i>
                 </a>
             </div>
-            <div class="header__cart">
+
+            <div class="header__account  d-none d-lg-flex col-lg-2">
+                <div class="header__account-wrapper">
+                    <svg class="account__avt" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+                    </svg>
+
+                    <div class="account__text">
+
+                        <!-- đã đăng nhập -->
+                        <div class="account__user">
+                            <span class="account__text-sm">Tài khoản</span>
+                            <span class="account__user-name account__text-lg">Nguyễn Như Trung</span>
+
+                            <ul class="account__user-menu">
+                                <li class="dark-hover account__user-item"><a href="">Tài khoản</a></li>
+                                <li class="dark-hover account__user-item"><a href="">Đơn mua</a></li>
+                                <li class="dark-hover account__user-item account__user-item-sepa"><a href="">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- chưa đăng nhập -->
+                        <div class="account__sign">
+                            <span class="account__text-sm sign_up">Đăng ký</span>
+                            <span class="account__text-lg sign_in">Đăng nhập</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="header__cart  offset-2 col-1  offset-md-0-25 col-md-0-75  offset-lg-0 col-lg-1  d-flex justify-md-center">
                 <div class="cursor-hover header__cart-wrap">
-                    <img class="cart__icon" src="./assets/img/icons/cart.png" alt="">
-                    <span class="cart__number">4</span>
+                    <div class="cart__icon" style="background: center / contain no-repeat url(./assets/img/icons/cart.png);" alt="">
+                        <span class="cart__number">4</span>
+                    </div>
+                    <span class="cart__text  d-none d-lg-block">Giỏ Hàng</span>
 
                     <div class="cart__list--noitem">
                         <div class="anti-opacity-hover cart__list--noitem-wrap cart__list">
@@ -256,6 +187,89 @@
 
                 </div>
             </div>
+
+            <div class="header__menu-mobile  offset-1 col-1  offset-md-0 col-md-1  d-block d-lg-none">
+                <label for="header__menu-control" class="  d-flex justify-md-center">
+                    <svg class="header__menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" />
+                    </svg>
+                </label>
+
+                <input type="checkbox" hidden id="header__menu-control">
+                <label for="header__menu-control" class="header__menu-panel"></label>
+
+                <ul class="header__menu-list">
+
+                    <label for="header__menu-control" class="header__menu-close">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" />
+                        </svg>
+                    </label>
+                    <div class="header__menu-close--replace"></div>
+
+
+                    <svg class="account__avt" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+                    </svg>
+                    <li class="account__user account__user-name header__menu-separate">Nguyễn Như Trung</span>
+
+
+                    <li class="header__menu-item account__sign sign_up">
+                        <a class="header__menu-link" href="">
+                            <i class="header__menu-list-icon ri-add-line"></i>
+                            <span class="header__menu-text">Đăng ký</span>
+                        </a>
+                    </li>
+                    <li class="header__menu-item header__menu-separate account__sign sign_in">
+                        <a class="header__menu-link" href="">
+                            <i class="header__menu-list-icon ri-login-circle-line"></i>
+                            <span class="header__menu-text">Đăng nhập</span>
+                        </a>
+                    </li>
+
+
+                    <li class="header__menu-item account__user">
+                        <a class="header__menu-link" href="">
+                            <i class="header__menu-list-icon ri-contacts-line"></i>
+                            <span class="header__menu-text">Tài khoản</span>
+                        </a>
+                    </li>
+
+                    <li class="header__menu-item account__user">
+                        <a class="header__menu-link" href="">
+                            <i class="header__menu-list-icon ri-bill-line"></i>
+                            <span class="header__menu-text">Đơn mua</span>
+                        </a>
+                    </li>
+
+
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="">
+                            <i class="header__menu-list-icon ri-notification-2-line"></i>
+                            <span class="header__menu-text">Thông báo</span>
+                        </a>
+                    </li>
+                    <li class="header__menu-item header__menu-separate">
+                        <a class="header__menu-link" href="">
+                            <i class="header__menu-list-icon ri-headphone-line"></i>
+                            <span class="header__menu-text">Hỗ trợ</span>
+                        </a>
+                    </li>
+
+                    <li class="header__menu-item account__user">
+                        <a class="header__menu-link" href="">
+                            <i class="header__menu-list-icon ri-logout-circle-r-line"></i>
+                            <span class="header__menu-text">Đăng xuất</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </div>
 </div>
+
+<div class="replace-header"></div>
