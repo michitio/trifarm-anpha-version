@@ -11,7 +11,7 @@
         foreach ($categories as $category) {
             echo "
                 <a href='#' class='category__item col-xl-1-5 col-md-2 col-4'>
-                    <img src='./assets/img/category-img/" . $category->getImg() . "' class='category__img'>
+                    <img src='" . $index . "/assets/img/category-img/" . $category->getImg() . "' class='category__img'>
                     <p class='category__text'>" . $category->getName() . "</p>
                 </a>";
         }

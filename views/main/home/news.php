@@ -9,7 +9,7 @@
 
         <div class="col-12 col-sm-6 col-md-4 col-xl-3">
             <a href="#" class="news card">
-                <img src="./assets/img/news/news-evfta.png" class="news__img">
+                <img src="<?php echo $index ?>/assets/img/news/news-evfta.png" class="news__img">
                 <div class="news__body">
                     <h5 class="news__title">Nhiều nông sản xuất khẩu tận dụng tốt EVFTA</h5>
                     <p class="news__brief">Theo Bộ Công thương, trong 6 tháng đầu năm 2022, kim ngạch xuất khẩu
@@ -20,7 +20,7 @@
 
         <div class="col-12 col-sm-6 col-md-4 col-xl-3">
             <a href="#" class="news card">
-                <img src="./assets/img/news/news-rau.png" class="news__img">
+                <img src="<?php echo $index ?>/assets/img/news/news-rau.png" class="news__img">
                 <div class="news__body">
                     <h5 class="news__title">Vợ chồng bỏ việc tại viện nghiên cứu về trồng rau sạch</h5>
                     <p class="news__brief">Từng là nghiên cứu viên về lĩnh vực nông nghiệp, đôi vợ chồng ở Quảng
@@ -32,7 +32,7 @@
 
         <div class="col-12 col-sm-6 col-md-4 col-xl-3">
             <a href="#" class="news card">
-                <img src="./assets/img/news/news-tmdt.png" class="news__img">
+                <img src="<?php echo $index ?>/assets/img/news/news-tmdt.png" class="news__img">
                 <div class="news__body">
                     <h5 class="news__title">Đẩy mạnh tiêu thụ nông sản, hàng Việt lên sàn thương mại điện tử
                     </h5>
@@ -45,7 +45,7 @@
 
         <div class="col-12 col-sm-6 col-md-4 col-xl-3">
             <a href="#" class="news card">
-                <img src="./assets/img/news/news-xoai.png" class="news__img">
+                <img src="<?php echo $index ?>/assets/img/news/news-xoai.png" class="news__img">
                 <div class="news__body">
                     <h5 class="news__title">Sốc với giá xoài cát Hòa Lộc</h5>
                     <p class="news__brief">Giá xoài cát Hòa Lộc đang gây sốc cho thị trường khi tăng thêm từ vài

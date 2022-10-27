@@ -55,61 +55,61 @@
                 <div class="footer-img__row row g-0 row-cols-5">
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/payment/visa.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/payment/visa.png" alt="">
                         </a>
                     </div>
 
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/payment/mastercard.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/payment/mastercard.png" alt="">
                         </a>
                     </div>
 
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/payment/jcb.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/payment/jcb.png" alt="">
                         </a>
                     </div>
 
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/payment/atm.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/payment/atm.png" alt="">
                         </a>
                     </div>
 
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/payment/momo.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/payment/momo.png" alt="">
                         </a>
                     </div>
 
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/payment/zalopay.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/payment/zalopay.png" alt="">
                         </a>
                     </div>
 
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/payment/moca.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/payment/moca.png" alt="">
                         </a>
                     </div>
 
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/payment/vnpay.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/payment/vnpay.png" alt="">
                         </a>
                     </div>
 
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/payment/shopeepay.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/payment/shopeepay.png" alt="">
                         </a>
                     </div>
 
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/payment/cash.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/payment/cash.png" alt="">
                         </a>
                     </div>
 
@@ -123,25 +123,25 @@
                 <div class="footer-img__row row g-0 row-cols-4">
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/mybrand/triexpress.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/mybrand/triexpress.png" alt="">
                         </a>
                     </div>
 
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/shipper/ghn.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/shipper/ghn.png" alt="">
                         </a>
                     </div>
 
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/shipper/jnt-express.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/shipper/jnt-express.png" alt="">
                         </a>
                     </div>
 
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="./assets/img/shipper/best-express.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/shipper/best-express.png" alt="">
                         </a>
                     </div>
 
@@ -184,11 +184,11 @@
 
                 <div class="footer-info__certificate-wraper">
                     <a href="" class="footer-img__link footer-item__link">
-                        <img class="footer-info__certificate-img" src="./assets/img/footer-certi/bo-cong-thuong.png" alt="">
+                        <img class="footer-info__certificate-img" src="<?php echo $index ?>/assets/img/footer-certi/bo-cong-thuong.png" alt="">
                     </a>
 
                     <a href="" class="footer-img__link footer-item__link">
-                        <img class="footer-info__certificate-img" src="./assets/img/footer-certi/bo-cong-thuong-2.png" alt="">
+                        <img class="footer-info__certificate-img" src="<?php echo $index ?>/assets/img/footer-certi/bo-cong-thuong-2.png" alt="">
                     </a>
                 </div>
 

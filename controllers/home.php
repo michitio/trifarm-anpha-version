@@ -17,14 +17,9 @@ class home
 
     public function index()
     {
-        // $products = array();
-        // foreach ($categories as $category) {
-        //     $temp = $this->ModelProduct->getProductListByCategory($category->getId());
-        //     array_push($products, $temp);
-        // }
-        
         $categories = $this->ModelCategory->getCategoryList();
         $recommends = $this->ModelProduct->getProductListLimit(18, 0);
+        $hotsale = $this->ModelProduct->getProductListLimit(6, 3);
         $info = ['home', 'index'];
 
         include "views/basepage.php";

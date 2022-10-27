@@ -13,33 +13,36 @@ class Controller
 
     public function invoke()
     {
-        /*         if (!isset($_GET["id"])) {
-            $index = 0;
+        $index = 'http://localhost/trifarm-anpha-version';
 
-            if (isset($_GET['category'])) {
-                $categories = [$this->model->getCategory($_GET['category'])];
-                $products = [$this->model->getProductListByCategory($_GET['category'])];
-            } else {
-                $categories = $this->model->getCategoryList();
-                $products = array();
-                foreach ($categories as $category) {
-                    $temp = $this->model->getProductListByCategory($category->getId());
-                    array_push($products, $temp);
-                }
+        // http://www.example.com/[detail/product/id=5~name=helo]
+
+        $url = [];
+
+        if (isset($_GET["url"])) {
+            $urlString = trim($_GET["url"]);
+            $urlString = filter_var($urlString, FILTER_SANITIZE_URL);
+
+            $temp = explode("/", $urlString);
+            $page = $temp[0];
+            array_push($url, $page);
+
+            if (isset($temp[1])) {
+                $method = $temp[1];
+                array_push($url, $method);
             }
-        } else {
-            $index = 1;
-            $product = $this->model->getProduct($_GET["id"]);
+
+            if (isset($temp[2])) {
+                $param = $temp[2];
+                array_push($url, $param);
+            }
+
         }
 
-        include "views/basepage.php";
- */
-        $url = isset($_GET["url"]) ? explode("/", filter_var(trim($_GET["url"]))) : ""; // Array ( [0] => home )
 
         // Controller
         if (isset($url[0]) && file_exists("./controllers/" . $url[0] . ".php")) {
             $this->controller = $url[0];
-            unset($url[0]);
         }
 
         require_once "./controllers/" . $this->controller . ".php";
@@ -49,14 +52,25 @@ class Controller
         if (isset($url[1])) {
             if (method_exists($this->controller, $url[1])) {
                 $this->method = $url[1];
-                unset($url[1]);
+            } else {
+                $this->controller = 'notfound';
+                // header("Location: $index");
+                require_once "./controllers/" . $this->controller . ".php";
+                $this->controller = new $this->controller;
             }
         }
 
-        // Params
-        $this->params = $url ? array_values($url) : [];
+        // $temp = explode("=", $temp[2]);
+        // $_GET[$temp[0]] = temp[1];
+        // $_GET['name'] = 'trung';
 
-        //public/home/index
+        // echo $temp[0];
+        // echo $temp[1];
+
+        // Params
+        $this->params = [];
+
+        // gọi hàm dẫn đến controller phụ (home, detail, search) 
         call_user_func_array([$this->controller, $this->method], $this->params);
     }
 }

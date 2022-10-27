@@ -10,7 +10,7 @@
 
             <div class="header__logo  offset-3 col-3  offset-md-0 col-md-2  col-lg-1-5">
                 <a href="/" class="header__logo-link">
-                    <img class="header__logo-img" src="./assets/img/mybrand/trifarm.png" alt="TriFarm">
+                    <img class="header__logo-img" src="<?php echo $index ?>/assets/img/mybrand/trifarm.png" alt="TriFarm">
                 </a>
             </div>
 
@@ -81,14 +81,14 @@
 
             <div class="header__cart  offset-2 col-1  offset-md-0-25 col-md-0-75  offset-lg-0 col-lg-1  d-flex justify-md-center">
                 <div class="cursor-hover header__cart-wrap">
-                    <div class="cart__icon" style="background: center / contain no-repeat url(./assets/img/icons/cart.png);" alt="">
+                    <div class="cart__icon" style="background: center / contain no-repeat url(<?php echo $index ?>/assets/img/icons/cart.png);" alt="">
                         <span class="cart__number">4</span>
                     </div>
                     <span class="cart__text  d-none d-lg-block">Giỏ Hàng</span>
 
                     <div class="cart__list--noitem">
                         <div class="anti-opacity-hover cart__list--noitem-wrap cart__list">
-                            <img class="cart__list--noitem-img" src="./assets/img/cart-empty3.png" alt="">
+                            <img class="cart__list--noitem-img" src="<?php echo $index ?>/assets/img/cart-empty3.png" alt="">
                             <p class="cart__list--noitem-content">Chưa có sản phẩm</p>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
 
                                 <!-- cart item -->
                                 <li class="cart__item">
-                                    <img class="cart__item-img" src="./assets/img/category-img/trung.png" alt="">
+                                    <img class="cart__item-img" src="<?php echo $index ?>/assets/img/category-img/trung.png" alt="">
                                     <div class="cart__item-info">
                                         <div class="cart__item-row">
                                             <p class="cart__item-name">Trứng gà công nghiệp VISSAN tiệt trùng
@@ -142,7 +142,7 @@
 
                                 <!-- cart item -->
                                 <li class="cart__item">
-                                    <img class="cart__item-img" src="./assets/img/category-img/ruou.png" alt="">
+                                    <img class="cart__item-img" src="<?php echo $index ?>/assets/img/category-img/ruou.png" alt="">
                                     <div class="cart__item-info">
                                         <div class="cart__item-row">
                                             <p class="cart__item-name">Nước gạo lên men cao cấp</p>
@@ -162,7 +162,7 @@
 
                                 <!-- cart item -->
                                 <li class="cart__item">
-                                    <img class="cart__item-img" src="./assets/img/category-img/mut.png" alt="">
+                                    <img class="cart__item-img" src="<?php echo $index ?>/assets/img/category-img/mut.png" alt="">
                                     <div class="cart__item-info">
                                         <div class="cart__item-row">
                                             <p class="cart__item-name">Mứt dâu Đà Lạt</p>
