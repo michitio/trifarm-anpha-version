@@ -64,6 +64,15 @@ ul {
         width: 14.58333333%;
     }
 
+    .col-xl-2-5 {
+        flex: 0 0 auto;
+        width: 20.83333333%;
+    }
+
+    .col-xl-4-5 {
+        flex: 0 0 auto;
+        width: 37.5%;
+    }
 }
 
 @media (min-width: 992px) {

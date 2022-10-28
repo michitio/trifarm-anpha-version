@@ -1,6 +1,15 @@
-<link rel="stylesheet" href="detail.css">
+<link rel="stylesheet" href="<?php echo $index ?>/assets/css/detail.css">
 
 <?php
-    $id = $info[2];
-    echo $id;
+// breadcrumb
+require_once "breadcrumb.php";
+
+// product
+require_once "product.php";
+
+// description
+require_once "description.php";
+
+// review
+require_once "review.php";
 ?>

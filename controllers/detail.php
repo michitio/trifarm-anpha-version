@@ -15,16 +15,12 @@ class detail
         $this->ModelCategory = new ModelCategory();
     }
 
-    public function product()
+    public function product($id)
     {
-        // $categories = $this->ModelCategory->getCategoryList();
-        if (isset($_GET['id']))
-            echo $_GET['id'];
-        // if (isset($_GET['name']))
-        // echo "hello";
-        // echo $_GET['name'];
-        // $info = ['detail', 'product', $id];
+        $product = $this->ModelProduct->getProduct($id);
+        $category = $this->ModelCategory->getCategory($product->getIdCategory());
+        $info = ['detail', 'product'];
 
-        // include "views/basepage.php";
+        include "views/basepage.php";
     }
 }

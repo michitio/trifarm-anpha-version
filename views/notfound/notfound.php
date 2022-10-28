@@ -29,12 +29,11 @@ $index = 'http://localhost/trifarm-anpha-version';
             background: -webkit-linear-gradient(to right,
                     #57ce99,
                     #29a143,
-                    #1b8a6e);
+                    #2DBF4B);
             /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to right,
-                    #5db871,
-                    #29a143,
-                    #2b8542);
+                    #5bc571,
+                    #24ad40);
             /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             display: flex;
             justify-content: center;
@@ -57,7 +56,7 @@ $index = 'http://localhost/trifarm-anpha-version';
         .box .large-number,
         .box .center-number {
             font-size: 250px;
-            color: #29a160;
+            color: #14a130;
             font-weight: 800;
             margin: 0;
         }
@@ -68,19 +67,20 @@ $index = 'http://localhost/trifarm-anpha-version';
         }
 
         .box span {
-            font-size: 30px;
-            color: #333;
+            font-size: 32px;
+            color: #666;
         }
 
         .box p {
+            font-size: 18px;
             margin-bottom: 70px;
-            color: #333;
+            color: #444;
         }
 
         .box .btn-home {
             text-decoration: none;
             color: #ffffff;
-            background-color: #29a160;
+            background-color: #14a130;
             padding: 10px 20px;
             border-radius: 8px;
             text-transform: uppercase;

@@ -123,7 +123,7 @@
                 <div class="footer-img__row row g-0 row-cols-4">
                     <div class="footer-img__item">
                         <a href="" class="footer-img__link footer-item__link">
-                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/mybrand/triexpress.png" alt="">
+                            <img class="footer-img__img" src="<?php echo $index ?>/assets/img/shipper/ninja-van.png" alt="">
                         </a>
                     </div>
 
