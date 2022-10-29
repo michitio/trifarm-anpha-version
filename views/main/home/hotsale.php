@@ -19,18 +19,18 @@
             $sale = rand(10, 100);
             echo "
             <div class='col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2'>
-                <a href='./product/detail.html' class='card__flashsale card'>
+                <a href='" . $index . "/detail/product/id=" . $product->getId() . "' class='card__flashsale card'>
                     <div style='background: center / contain no-repeat url(" . $product->getImg() . ");' class='card-img-top'></div>
 
                     <div class='card-body'>
                         <h5 class='product__name'>" . $product->getName() . "</h5>
                         <div class='product__price'>
-                            <p class='product__price-old'>" . ($product->getPrice() + 5000) . "</p>
+                            <p class='product__price-old'>" . $product->getOldPrice() . "</p>
                             <p class='product__price-new'>" . $product->getPrice() . "</p>
                         </div>
 
                         <div class='product__sold' style='--percent: " . $sale . "%'>
-                            <p class='product__sold--text'>Đã bán " . $sale . "</p>
+                            <p class='product__sold--text'>Đã bán " . round($product->getSold()/10) . "</p>
                         </div>
                     </div>
                 </a>

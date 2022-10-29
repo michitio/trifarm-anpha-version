@@ -15,13 +15,18 @@ class home
         $this->ModelCategory = new ModelCategory();
     }
 
-    public function index()
+    public function index($data)
     {
-        $categories = $this->ModelCategory->getCategoryList();
-        $recommends = $this->ModelProduct->getProductListLimit(18, 0);
-        $hotsale = $this->ModelProduct->getProductListLimit(6, 3);
-        $info = ['home', 'index'];
+        if (isset($data['index'])) {
+            $index = $data['index'];
 
-        include "views/basepage.php";
+            $categories = $this->ModelCategory->getCategoryList();
+            $recommends = $this->ModelProduct->getProductListLimit(18, 0);
+            $hotsale = $this->ModelProduct->getProductListLimit(6, 3);
+            $info = ['home', 'index'];
+
+            include "views/basepage.php";
+        } else
+            include "views/notfound/notfound.php";
     }
 }

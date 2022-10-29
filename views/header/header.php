@@ -9,7 +9,7 @@
             </div>
 
             <div class="header__logo  offset-3 col-3  offset-md-0 col-md-2  col-lg-1-5">
-                <a href="/" class="header__logo-link">
+                <a href="<?php echo $index ?>" class="header__logo-link">
                     <img class="header__logo-img" src="<?php echo $index ?>/assets/img/mybrand/trifarm.png" alt="TriFarm">
                 </a>
             </div>

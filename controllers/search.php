@@ -3,7 +3,7 @@
 require_once "models/_modelProduct.php";
 require_once "models/_modelCategory.php";
 
-class detail
+class search
 {
 
     public $ModelProduct;
@@ -17,20 +17,20 @@ class detail
 
     public function product($data)
     {
-        if (isset($data['index']) && isset($data['id'])) {
+        if (isset($data['index']) && isset($data['key'])) {
             $index = $data['index'];
-            $id = $data['id'];
+            $key = $data['key'];
 
-            $product = $this->ModelProduct->getProduct($id);
+            // $product = $this->ModelProduct->getProduct($id);
 
-            if ($product == null) {
-                include "views/notfound/notfound.php";
-            } else {
-                $category = $this->ModelCategory->getCategory($product->getIdCategory());
-                $info = ['detail', 'product'];
+            // if ($product == null) {
+            //     include "views/notfound/notfound.php";
+            // } else {
+            //     $category = $this->ModelCategory->getCategory($product->getIdCategory());
+                $info = ['search', 'product'];
 
                 include "views/basepage.php";
-            }
+            // }
         } else
             include "views/notfound/notfound.php";
     }

@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-$index = 'http://localhost/trifarm-anpha-version';
-?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

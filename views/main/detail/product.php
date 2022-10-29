@@ -1,58 +1,85 @@
 <div class="content__container container">
     <div class="detail row">
-        <div class="product__image col-xl-5">
+        <div class="product__image col-md-12 col-lg-6 col-xl-5">
             <div class="product__img-wraper">
                 <div style='background: center / contain no-repeat url(<?php echo $product->getImg() ?>);' class='product__img'></div>
             </div>
         </div>
 
-        <div class="product__info col-xl-7">
+        <div class="product__info col-md-12 col-lg-6 col-xl-7">
             <h1 class="product__name"><?php echo $product->getName() ?></h1>
 
             <div class="product__location">
                 <span class="product__location-label">Xuất xứ:</span>
-                <a href="#" class="product__location-link">Việt Nam</a>
+                <a href="#" class="product__location-link"><?php echo $product->getLocation() ?></a>
             </div>
 
             <div class="product__react">
 
                 <a href="#" class="product__rating">
-                    <span class="product__rating-desc">4.2</span>
-                    <i class="product__rating-yellow ri-star-fill"></i>
-                    <i class="product__rating-yellow ri-star-fill"></i>
-                    <i class="product__rating-yellow ri-star-fill"></i>
-                    <i class="product__rating-yellow ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
+                    <span class="product__rating-desc"><?php echo $product->getStar() / 10 ?></span>
+
+                    <?php
+                    $storeStar = $product->getStar() * 10;
+                    for ($i = 0; $i < 5; $i++) {
+                        if ($storeStar >= 100) {
+                            echo "<i class='product__rating-yellow ri-star-fill'></i>";
+                            $storeStar -= 100;
+                        } else {
+                            echo "<i class='product__rating-yellow ri-star-fill' style='--star-percent: " . $storeStar . "%;'></i>";
+                            $storeStar = 0;
+                        }
+                    }
+                    ?>
                 </a>
 
                 <a href="#" class="product__review">
-                    <span class="product__review-desc">561</span>
+                    <span class="product__review-desc"><?php echo $product->getReview() ?></span>
                     <span class="product__review-label">Đánh Giá</span>
                 </a>
 
                 <a href="#" class="product__sold">
-                    <span class="product__sold-desc">1500</span>
+                    <span class="product__sold-desc"><?php echo $product->getSold() ?></span>
                     <span class="product__sold-label">Đã Bán</span>
                 </a>
 
             </div>
 
             <div class="product__price">
-                <p class="product__price-new"><?php echo ($product->getPrice() + 5000) ?></p>
-                <p class="product__price-old"><?php echo $product->getPrice() ?></p>
-            </div>
-
-            <div class="product__modify">
-                <span class="product__modify-label">Dung tích:</span>
-                <span class="product__modify-choosing">500ml</span>
-
-                <div class="product__modify-option">
-                    <button class="product__modify-btn-active product__modify-btn">500 ml</button>
-                    <button class="product__modify-btn">1 lít</button>
+                <div class="product__price-wrapper">
+                    <p class="product__price-new"><?php echo $product->getPrice() ?></p>
+                    <p class="product__price-old"><?php echo $product->getOldPrice() ?></p>
+                    <p class="product__price-percent">
+                        -<?php echo round((1 - $product->getPrice() / $product->getOldPrice()) * 100) ?>%
+                    </p>
+                </div>
+                <div class="product__price-cheap">
+                    <i class="product__price-cheap-shield ri-shield-check-fill"></i>
+                    <span class="product__price-cheap-text">rẻ hơn hoàn tiền</span>
                 </div>
             </div>
 
-            <div class="product__ship separator__top">
+            <div class="product__modify">
+                <span class="product__modify-label">Loại:</span>
+                <span class="product__modify-choosing">
+                    <?php echo explode('~', $product->getUnit())[0]; ?>
+                </span>
+
+                <div class="product__modify-option">
+
+                    <?php
+                    $unitRaw = $product->getUnit();
+                    $unitList = explode('~', $unitRaw);
+                    foreach ($unitList as $key => $value) {
+                        echo "<input type='radio' hidden id='option" . $key . "' name='radios' value='option" . $key . "' " . ($key === 0 ? 'checked' : '') . ">";
+                        echo "<label for='option" . $key . "' class='product__modify-btn'>" . $value . "</label>";
+                    };
+                    ?>
+
+                </div>
+            </div>
+
+            <div class="product__ship">
                 <div class="product__ship-address">
                     <span class="product__ship-label">Giao đến</span>
                     <span class="product__ship-choosing">P.Bến Nghé, Q.1, Hồ Chí Minh</span> -
@@ -72,17 +99,19 @@
 
             </div>
 
-            <div class="product__quantity separator__top">
+            <div class="product__quantity">
                 <span class="product__quantity-label">Số lượng</span>
                 <div class="product__quantity-wrapper">
                     <div class="product__quantity-box">
-                        <div class="product__quantity-decrease">
+                        <button class="product__quantity-decrease" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                             <i class="ri-subtract-line"></i>
-                        </div>
-                        <input class="product__quantity-input" type="text" value="1">
-                        <div class="product__quantity-increase">
+                        </button>
+
+                        <input class="product__quantity-input" name="quantity" min="0" value="1" type="number">
+
+                        <button class="product__quantity-increase" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                             <i class="ri-add-fill"></i>
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -96,4 +125,10 @@
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="<?php echo $index ?>/assets/js/formatPrice.js"></script>
+<script>
+    $('.product__modify-option input').on('change', function() {
+        $('.product__modify-choosing').html($('input[name=radios]:checked+label').html());
+    });
+</script>

@@ -1,109 +1,142 @@
+<!DOCTYPE html>
 <html lang="en">
-<?php
-$index = 'http://localhost/trifarm-anpha-version';
-?>
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Page</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="<?php echo $index ?>/assets/css/base.css">
+    <link rel="stylesheet" href="<?php echo $index ?>/assets/css/bootstrap.css">
+
+    <title>404 Page | TriFarm</title>
+    <link rel="shortcut icon" type="image/png" href="<?php echo $index ?>/assets/img/mybrand/favicon.png">
 </head>
 
 <body>
     <div class="box">
-        <h1 class="large-number">
-            4<span class="center-number">0</span>4
-        </h1>
-        <span>Ooopps</span>
-        <p>Trang bạn yêu cầu không tìm thấy. Về trang chủ thôi</p>
-        <a href="<?php echo $index ?>" class="btn-home">Trang chủ</a>
+        <img class="img-left" src="<?php echo $index ?>/assets/img/404-page/404-page-left.png" alt="">
+        <div class="text-wrapper">
+            <span class="num">
+                <span class="num-4">4</span>
+                <span class="num-0">o</span>
+                <span class="num-4">4</span>
+            </span>
+            <span class="text-error">Ewww. Trang bạn yêu cầu không tìm thấy.</span>
+            <span class="text-home">Về trang chủ thôi.</span>
+            <a class="home" href="<?php echo $index ?>">Trang Chủ</a>
+        </div>
+        <img class="img-right" src="<?php echo $index ?>/assets/img/404-page/404-page-right.png" alt="">
     </div>
 
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background: #29a143;
-            /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right,
-                    #57ce99,
-                    #29a143,
-                    #2DBF4B);
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right,
-                    #5bc571,
-                    #24ad40);
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            overflow: hidden;
+        }
+
+        .box {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            width: 30%;
+            min-width: 380px;
+            position: relative;
         }
 
-        .box {
-            width: 80%;
-            height: 80%;
-            background-color: #e9ecef;
-            text-align: center;
-            border-radius: 10px;
-            -webkit-box-shadow: -5px -1px 36px -3px rgba(0, 0, 0, 0.75);
-            -moz-box-shadow: -5px -1px 36px -3px rgba(0, 0, 0, 0.75);
-            box-shadow: -5px -1px 36px -3px rgba(0, 0, 0, 0.75);
+        .box img {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
         }
 
-        .box .large-number,
-        .box .center-number {
-            font-size: 250px;
-            color: #14a130;
-            font-weight: 800;
-            margin: 0;
+        .img-right {
+            right: 0;
         }
 
-        .box .center-number {
-            -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        .img-left {
+            left: 0;
         }
 
-        .box span {
-            font-size: 32px;
-            color: #666;
+        .text-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--text-lighter-color);
         }
 
-        .box p {
-            font-size: 18px;
-            margin-bottom: 70px;
-            color: #444;
+        .num {
+            font-size: 10rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            color: var(--primary-color);
+
+            display: flex;
+            align-items: flex-start;
         }
 
-        .box .btn-home {
+        /* .num .num-4 {} */
+
+        .num .num-0 {
+            line-height: 11rem;
+            font-size: 12rem;
+            font-weight: 400;
+        }
+
+        .text-error {
+            font-size: 2rem;
+            margin-top: 32px;
+        }
+
+        .text-home {
+            font-size: 2rem;
+            margin-bottom: 60px;
+
+        }
+
+        .home {
+            display: block;
+            padding: 8px 80px;
+            font-size: 2rem;
             text-decoration: none;
-            color: #ffffff;
-            background-color: #14a130;
-            padding: 10px 20px;
             border-radius: 8px;
-            text-transform: uppercase;
+            color: var(--primary-color);
+            background: white;
+            border: 1px solid var(--primary-color);
         }
 
-        .box .btn-home:hover {
-            opacity: 0.8;
+        .home:hover {
+            background: var(--primary-color);
+            border: 1px solid transparent;
+            color: white;
         }
 
-        @media (max-width: 767px) {
 
-            .box .large-number,
-            .box .center-number {
-                font-size: 150px;
-                margin-top: 40px;
-                margin-bottom: 64px;
+        @media (max-width: 900px) {
+
+            .box img {
+                position: absolute;
             }
 
-            .box p {
-                margin-bottom: 108px;
+            .img-right {
+                right: -70%;
+            }
+
+            .img-left {
+                left: -70%;
             }
         }
     </style>
+
 </body>
 
 </html>

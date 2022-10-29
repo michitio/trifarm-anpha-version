@@ -6,6 +6,7 @@ class Controller
     protected $controller = 'home';
     protected $method = 'index';
     protected $params = [];
+    public $index = 'http://localhost/trifarm-anpha-version';
 
     public function __construct()
     {
@@ -13,12 +14,14 @@ class Controller
 
     public function invoke()
     {
-        $index = 'http://localhost/trifarm-anpha-version';
 
         // header("Location: $index");
-        // http://www.example.com/[detail/product/id=5~name=helo]
+        // http://www.example.com/[detail/product/id=5]
+        // http://www.example.com/[search/product/name=nho~category=1~location=vietnam~price=100-300~star=4~option=new]
 
+        $index = $this->index;
         $url = [];
+        $this->params = [["index" => $this->index]];
 
         // url handler
         if (isset($_GET["url"])) {
@@ -46,13 +49,11 @@ class Controller
 
         // xử lý controller không tìm thấy trang + gọi hàm kiểm tra url
         if (!$this->checkValidController($url)) {
-            $this->controller = 'notfound';
-            require_once "./controllers/" . $this->controller . ".php";
-            $this->controller = new $this->controller;
-        };
-
-        // gọi hàm dẫn đến controller phụ (home, detail, search) 
-        call_user_func_array([$this->controller, $this->method], $this->params);
+            include "views/notfound/notfound.php";
+        } else {
+            // gọi hàm dẫn đến controller phụ (home, detail, search) 
+            call_user_func_array([$this->controller, $this->method], $this->params);
+        }
     }
 
     // kiểm tra url có hướng đến controller nào không
@@ -68,21 +69,42 @@ class Controller
             if (isset($url[1]) && method_exists($this->controller, $url[1])) {
                 $this->method = $url[1];
 
+                // Params
                 if (isset($url[2])) {
-                    $params = [];
-
-                    $tempArr = explode("~", $url[2]);
-                    foreach ($tempArr as $element) {
-                        $temp = explode("=", $element);
-                        array_push($params, $temp[1]);
-                    }
-
-                    // Params
-                    $this->params = $params;
+                    if ($this->getParams($url[2]))
+                        $this->params = [$this->getParams($url[2])];
+                    else return false;
                 };
             } else return false;
         } else return false;
 
         return true;
+    }
+
+    // lấy data params
+    public function getParams($rawString)
+    {
+        $params = [
+            "id" => "",
+            "key" => "",
+            "category" => "",
+            "location" => "",
+            "price" => "",
+            "star" => "",
+            "option" => "",
+            "index" => $this->index
+        ];
+
+        $rawArr = explode("~", $rawString);
+        foreach ($rawArr as $element) {
+            $temp = explode("=", $element);
+            if (array_key_exists($temp[0], $params)) {
+                $params[$temp[0]] = $temp[1];
+            } else {
+                return false;
+            }
+        }
+
+        return $params;
     }
 }

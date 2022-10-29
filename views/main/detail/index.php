@@ -13,3 +13,7 @@ require_once "description.php";
 // review
 require_once "review.php";
 ?>
+
+<script>
+    document.title = "<?php echo $product->getName() ?> | TriFarm";
+</script>

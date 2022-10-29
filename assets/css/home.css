@@ -99,7 +99,11 @@
 }
 
 .product__rating-yellow {
-    color: rgb(253, 216, 54);
+    --star-percent: 100%;
+    background: linear-gradient(90deg, var(--star-yellow-color) var(--star-percent), rgb(213, 213, 213) var(--star-percent));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .product__sold {

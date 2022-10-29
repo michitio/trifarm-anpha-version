@@ -9,7 +9,20 @@ class ModelProduct
         $result = executeQuery("SELECT * FROM tb_product");
         $data = array();
         while ($rows = mysqli_fetch_assoc($result)) {
-            $product = new Product($rows["id"], $rows["name"], $rows["img"], $rows["desc"], $rows["price"], $rows["id_category"]);
+            $product = new Product(
+                $rows["id"],
+                $rows["name"],
+                $rows["img"],
+                $rows["desc"],
+                $rows["price"],
+                $rows["old_price"],
+                $rows["location"],
+                $rows["star"],
+                $rows["review"],
+                $rows["sold"],
+                $rows["unit"],
+                $rows["id_category"]
+            );
             array_push($data, $product);
         }
         return $data;
@@ -20,7 +33,20 @@ class ModelProduct
         $result = executeQuery("SELECT * FROM tb_product limit " . $page . ", " . $num);
         $data = array();
         while ($rows = mysqli_fetch_assoc($result)) {
-            $product = new Product($rows["id"], $rows["name"], $rows["img"], $rows["desc"], $rows["price"], $rows["id_category"]);
+            $product = new Product(
+                $rows["id"],
+                $rows["name"],
+                $rows["img"],
+                $rows["desc"],
+                $rows["price"],
+                $rows["old_price"],
+                $rows["location"],
+                $rows["star"],
+                $rows["review"],
+                $rows["sold"],
+                $rows["unit"],
+                $rows["id_category"]
+            );
             array_push($data, $product);
         }
         return $data;
@@ -31,7 +57,20 @@ class ModelProduct
         $result = executeQuery("SELECT * FROM tb_product WHERE id_category=" . $id_cate);
         $data = array();
         while ($rows = mysqli_fetch_assoc($result)) {
-            $product = new Product($rows["id"], $rows["name"], $rows["img"], $rows["desc"], $rows["price"], $rows["id_category"]);
+            $product = new Product(
+                $rows["id"],
+                $rows["name"],
+                $rows["img"],
+                $rows["desc"],
+                $rows["price"],
+                $rows["old_price"],
+                $rows["location"],
+                $rows["star"],
+                $rows["review"],
+                $rows["sold"],
+                $rows["unit"],
+                $rows["id_category"]
+            );
             array_push($data, $product);
         }
         return $data;
@@ -46,6 +85,4 @@ class ModelProduct
 
         return null;
     }
-
-
 }

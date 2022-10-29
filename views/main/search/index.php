@@ -1,50 +1,47 @@
-<div class="main container">
-    <div class="nav-side">
-        <?php include_once "menu.php" ?>
-    </div>
+<link rel="stylesheet" href="<?php echo $index ?>/assets/css/search.css">
 
-    <div class="content">
-        <?php
-        include_once "productlist.php";
-        ?>
+<?php
+// breadcrumb
+require_once "breadcrumb.php";
+?>
+
+<!-- content -->
+<div class="content__container container">
+    <div class="row g-3">
+        <div class="col-xl-2">
+            <?php
+            require_once "filter.php";
+            ?>
+        </div>
+
+        <div class="col-xl-10">
+            <!-- sort -->
+            <div class="row g-3">
+                <div class="col-xl-12">
+                    <?php
+                    require_once "sort.php";
+                    ?>
+                </div>
+            </div>
+
+            <!-- list_product -->
+            <div class="row g-3 row-cols-5 mt-0">
+                <?php
+                require_once "list_product.php";
+                ?>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-xl-12">
+                    <?php
+                    require_once "pagination.php";
+                    ?>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
 
-
-<style>
-    .main {
-        display: flex;
-        margin-top: 16px;
-    }
-
-    .nav-side {
-        width: 20%;
-    }
-
-    .content {
-        flex: 1;
-    }
-</style>
-
-<!-- controller -->
-<!--         if (!isset($_GET["id"])) {
-            $index = 0;
-
-            if (isset($_GET['category'])) {
-                $categories = [$this->model->getCategory($_GET['category'])];
-                $products = [$this->model->getProductListByCategory($_GET['category'])];
-            } else {
-                $categories = $this->model->getCategoryList();
-                $products = array();
-                foreach ($categories as $category) {
-                    $temp = $this->model->getProductListByCategory($category->getId());
-                    array_push($products, $temp);
-                }
-            }
-        } else {
-            $index = 1;
-            $product = $this->model->getProduct($_GET["id"]);
-        }
-
-        include "views/basepage.php";
--->
+<script src="<?php echo $index ?>/assets/js/formatPrice.js"></script>
+<script src="<?php echo $index ?>/assets/js/search.js"></script>

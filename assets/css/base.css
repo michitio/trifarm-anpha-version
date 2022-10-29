@@ -1,5 +1,7 @@
 :root {
     --primary-color: rgb(46, 192, 76);
+    --primary-dark-color: rgb(43, 182, 71);
+    --primary-light-color: rgb(59, 204, 88);
     /* --primary-color: rgb(45, 187, 66); */
     --white-color: #fff;
     --black-color: #000;
@@ -7,6 +9,7 @@
     --text-color: #333;
     --text-lighter-color: #737373;
     --text-lightest-color: #b8b8b8;
+    --star-yellow-color: #fdd836;
 
     --header-height: 80px;
 
