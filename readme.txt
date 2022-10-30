@@ -54,7 +54,6 @@ query list sản phẩm
 dùng SELECT DISTINCT lấy list id category
 tạo thêm model lấy category từ list
 hiển thị list ra
-chỉnh list thành label option 
 value radio là các id_category hoặc để trống cho tất cả sản phẩm
 js khi click thì lấy value từ $key có sẵn + có cate thì thêm ~category=1
 chuyển trang
@@ -79,3 +78,9 @@ giá thấp đến cao
 page
 thêm biến trên url
 
+----------
+Mai lên lớp làm:
+database
+pagination
+search
+ajax
