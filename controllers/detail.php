@@ -24,6 +24,7 @@ class detail
             $product = $this->ModelProduct->getProduct($id);
 
             if ($product == null) {
+                $error_log = "detail - product null";
                 include "views/notfound/notfound.php";
             } else {
                 $category = $this->ModelCategory->getCategory($product->getIdCategory());
@@ -31,7 +32,9 @@ class detail
 
                 include "views/basepage.php";
             }
-        } else
+        } else {
+            $error_log = "detail - unset data";
             include "views/notfound/notfound.php";
+        }
     }
 }

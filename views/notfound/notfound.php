@@ -17,18 +17,23 @@
 
 <body>
     <div class="box">
-        <img class="img-left" src="<?php echo $index ?>/assets/img/404-page/404-page-left.png" alt="">
+        <img class="img-left" src="<?php echo $index ?>/assets/img/error/404-page-left.png" alt="">
         <div class="text-wrapper">
             <span class="num">
                 <span class="num-4">4</span>
                 <span class="num-0">o</span>
                 <span class="num-4">4</span>
             </span>
+            <?php
+            if (isset($error_log)) {
+                echo "<span class='text-log'>Log: " . $error_log . "</span>";
+            }
+            ?>
             <span class="text-error">Ewww. Trang bạn yêu cầu không tìm thấy.</span>
             <span class="text-home">Về trang chủ thôi.</span>
             <a class="home" href="<?php echo $index ?>">Trang Chủ</a>
         </div>
-        <img class="img-right" src="<?php echo $index ?>/assets/img/404-page/404-page-right.png" alt="">
+        <img class="img-right" src="<?php echo $index ?>/assets/img/error/404-page-right.png" alt="">
     </div>
 
     <style>
@@ -92,16 +97,21 @@
             font-weight: 400;
         }
 
+        .text-log {
+            color: var(--text-lighter-color);
+            font-size: 1.3rem;
+            margin-top: -16px;
+        }
+
         .text-error {
-            font-size: 2rem;
-            margin-top: 32px;
+            font-size: 1.8rem;
+            margin-top: 40px;
         }
 
         .text-home {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 60px;
-
-        }
+        }    
 
         .home {
             display: block;

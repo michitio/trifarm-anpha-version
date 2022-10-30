@@ -98,18 +98,18 @@ a.breadcrumb__link:hover {
 }
 
 .product__location-label {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
 }
 
 .product__location-link {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     color: var(--primary-color);
     text-decoration: none;
 }
 
 .product__location-link:hover {
     color: var(--primary-color);
-    text-decoration: underline;
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .product__react {

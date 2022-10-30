@@ -42,9 +42,9 @@
                     <!-- end history -->
                 </div>
 
-                <a href="../search/search.html" class="primary-bg-hover search__btn btn--primary btn">
+                <button class="primary-bg-hover search__btn btn--primary btn">
                     <i class=" search__icon ri-search-line"></i>
-                </a>
+                </button>
             </div>
 
             <div class="header__account  d-none d-lg-flex col-lg-2">
@@ -273,3 +273,28 @@
 </div>
 
 <div class="replace-header"></div>
+
+<script>
+    function searchHandler() {
+        if ($('.search__input').val().trim() != "" && $('.search__input').val().trim() != " ") {
+            // Trim
+            var rawString = $('.search__input').val().trim();
+            // Encode URI
+            var searchURI = encodeURIComponent(rawString);
+            // Encode Base64
+            var searchBase64 = btoa(searchURI);
+            // Lưu biến vào link và chuyển trang
+            var temp = `<?php echo $index ?>/search/product/key=${searchBase64}`;
+            window.location.href = temp;
+        }
+    }
+
+    $('.search__btn').click(searchHandler);
+
+    $('.search__input').keypress(function(event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            searchHandler();
+        }
+    });
+</script>

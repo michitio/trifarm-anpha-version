@@ -125,7 +125,6 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="<?php echo $index ?>/assets/js/formatPrice.js"></script>
 <script>
     $('.product__modify-option input').on('change', function() {

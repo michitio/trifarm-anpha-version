@@ -345,8 +345,8 @@ a.breadcrumb__link:hover {
 .product__img {
     padding-top: 100%;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
+    background-size: contain;
+    background-position: center;
 
     border-radius: 8px;
     position: relative;

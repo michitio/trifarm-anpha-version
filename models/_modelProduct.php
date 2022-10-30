@@ -4,10 +4,10 @@ require_once "models/product.php";
 
 class ModelProduct
 {
-    public function getProductList()
+    private function queryProduct($query)
     {
-        $result = executeQuery("SELECT * FROM tb_product");
-        $data = array();
+        $result = executeQuery($query);
+        $data = [];
         while ($rows = mysqli_fetch_assoc($result)) {
             $product = new Product(
                 $rows["id"],
@@ -26,54 +26,22 @@ class ModelProduct
             array_push($data, $product);
         }
         return $data;
+    }
+
+    public function getProductList()
+    {
+        return $this->queryProduct("SELECT * FROM tb_product");
     }
 
     public function getProductListLimit($num, $page)
     {
-        $result = executeQuery("SELECT * FROM tb_product limit " . $page . ", " . $num);
-        $data = array();
-        while ($rows = mysqli_fetch_assoc($result)) {
-            $product = new Product(
-                $rows["id"],
-                $rows["name"],
-                $rows["img"],
-                $rows["desc"],
-                $rows["price"],
-                $rows["old_price"],
-                $rows["location"],
-                $rows["star"],
-                $rows["review"],
-                $rows["sold"],
-                $rows["unit"],
-                $rows["id_category"]
-            );
-            array_push($data, $product);
-        }
-        return $data;
+        return $this->queryProduct("SELECT * FROM tb_product limit " . $page . ", " . $num);
+        // $data;
     }
 
     public function getProductListByCategory($id_cate)
     {
-        $result = executeQuery("SELECT * FROM tb_product WHERE id_category=" . $id_cate);
-        $data = array();
-        while ($rows = mysqli_fetch_assoc($result)) {
-            $product = new Product(
-                $rows["id"],
-                $rows["name"],
-                $rows["img"],
-                $rows["desc"],
-                $rows["price"],
-                $rows["old_price"],
-                $rows["location"],
-                $rows["star"],
-                $rows["review"],
-                $rows["sold"],
-                $rows["unit"],
-                $rows["id_category"]
-            );
-            array_push($data, $product);
-        }
-        return $data;
+        return $this->queryProduct("SELECT * FROM tb_product WHERE id_category=" . $id_cate);
     }
 
     public function getProduct($id)
@@ -84,5 +52,10 @@ class ModelProduct
                 return $product;
 
         return null;
+    }
+
+    public function searchProduct($key)
+    {
+        return $this->queryProduct("SELECT * FROM tb_product WHERE `name` LIKE '%" . $key . "%'");
     }
 }

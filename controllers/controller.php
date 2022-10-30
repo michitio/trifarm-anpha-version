@@ -49,6 +49,7 @@ class Controller
 
         // xử lý controller không tìm thấy trang + gọi hàm kiểm tra url
         if (!$this->checkValidController($url)) {
+            $error_log = "controller - error url";
             include "views/notfound/notfound.php";
         } else {
             // gọi hàm dẫn đến controller phụ (home, detail, search) 
@@ -99,7 +100,15 @@ class Controller
         foreach ($rawArr as $element) {
             $temp = explode("=", $element);
             if (array_key_exists($temp[0], $params)) {
-                $params[$temp[0]] = $temp[1];
+                if ($temp[0] == 'key' || $temp[0] == 'location') {
+                    // Decode Base64
+                    $decodeBase64 = base64_decode(strstr($element, $temp[1]));
+                    // Decode URI
+                    $decodeURI = urldecode($decodeBase64);
+                } else {
+                    $decodeURI = $temp[1];
+                }
+                $params[$temp[0]] = $decodeURI;
             } else {
                 return false;
             }

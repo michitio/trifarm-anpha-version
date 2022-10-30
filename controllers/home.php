@@ -26,7 +26,9 @@ class home
             $info = ['home', 'index'];
 
             include "views/basepage.php";
-        } else
+        } else {
+            $error_log = "home - unset data";
             include "views/notfound/notfound.php";
+        }
     }
 }

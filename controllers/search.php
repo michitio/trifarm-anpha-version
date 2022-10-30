@@ -1,5 +1,6 @@
 <?php
 
+// require_once "models/product.php";
 require_once "models/_modelProduct.php";
 require_once "models/_modelCategory.php";
 
@@ -21,17 +22,14 @@ class search
             $index = $data['index'];
             $key = $data['key'];
 
-            // $product = $this->ModelProduct->getProduct($id);
+            $products = $this->ModelProduct->searchProduct($key);
 
-            // if ($product == null) {
-            //     include "views/notfound/notfound.php";
-            // } else {
-            //     $category = $this->ModelCategory->getCategory($product->getIdCategory());
-                $info = ['search', 'product'];
+            $info = ['search', 'product'];
 
-                include "views/basepage.php";
-            // }
-        } else
+            include "views/basepage.php";
+        } else {
+            $error_log = "search - unset data";
             include "views/notfound/notfound.php";
+        }
     }
 }
