@@ -84,3 +84,6 @@ database
 pagination
 search
 ajax
+
+database add
+https://docs.google.com/spreadsheets/d/1hXD336KKycFJdMWwEnL7JpLiyxYaYvxDH2sLBbLetys/edit#gid=0
