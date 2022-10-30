@@ -289,7 +289,7 @@
 /* =============================================== banner =============================================== */
 
 .banner {
-    background: linear-gradient(180deg, var(--primary-color) 50%, rgba(255, 255, 255, 0) 50%);
+    background: linear-gradient(180deg, var(--primary-light-color) 50%, rgba(255, 255, 255, 0) 50%);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -397,7 +397,7 @@
 
 .icon-item-banner {
     width: 36%;
-    border-radius: 36%;
+    border-radius: 12px;
 }
 
 .text-item-banner {

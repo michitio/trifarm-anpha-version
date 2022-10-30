@@ -98,15 +98,11 @@ a.breadcrumb__link:hover {
     padding-bottom: 8px;
 }
 
-.price-item,
-.react-item,
-.category-item {
+.radio-box-item {
     position: relative;
 }
 
-.price-item__link,
-.react-item__link,
-.category-item__link {
+.radio-box-item label {
     font-size: 1.3rem;
     color: var(--text-color);
     text-decoration: none;
@@ -118,24 +114,18 @@ a.breadcrumb__link:hover {
     right: 0;
 }
 
-.price-item__link:hover,
-.react-item__link:hover,
-.category-item__link:hover {
+.radio-box-item label:hover {
     color: var(--primary-color);
     right: -2px;
 }
 
-.price-item--active .price-item__link,
-.react-item--active .react-item__link,
-.category-item--active .category-item__link {
+.radio-box-item input[type="radio"]:checked+label {
     color: var(--primary-color);
     font-weight: 500;
     right: -1px;
 }
 
-.price-item--active .price-item__link::before,
-.react-item--active .react-item__link::before,
-.category-item--active .category-item__link::before {
+.radio-box-item input[type="radio"]:checked+label::before {
     content: "";
     display: block;
 
@@ -280,7 +270,7 @@ a.breadcrumb__link:hover {
     font-weight: 500;
     margin-top: 8px;
     margin-bottom: 4px;
-    margin-left: 16px;
+    margin-left: 8px;
 }
 
 .filter__action {
@@ -290,30 +280,39 @@ a.breadcrumb__link:hover {
 }
 
 .filter__btn {
-    margin: 6px;
-    font-size: 1.45rem;
-    min-width: 90px;
-    box-shadow: 0 1px 0.3rem rgba(0, 0, 0, 0.05);
+    padding: 0;
+    min-width: unset;
+    min-height: unset;
+}
+
+.filter__btn label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 1.4rem;
     position: relative;
     text-transform: capitalize;
 }
 
-.filter__btn:hover {
+.filter__btn:hover label {
     color: var(--primary-color);
 }
 
-.filter__btn--avtive {
+.filter__btn input[type="radio"]:checked+label {
     color: var(--primary-color);
     font-weight: 500;
     position: relative;
 }
 
-.filter__btn:hover::before,
-.filter__btn--avtive::before {
+.filter__btn label:hover::before,
+.filter__btn input[type="radio"]:checked+label::before {
     content: "";
     display: block;
     position: absolute;
-    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
     width: 48px;
     height: 4px;
     border-radius: 2px;

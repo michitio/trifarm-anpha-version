@@ -1,7 +1,7 @@
 <!-- content Gợi ý cho bạn -->
 <div class="content__container container">
     <h3 class="content__header">
-        <i class="content__header-icon ri-user-star-line"></i>
+        <i class="content__header-icon ri-medal-2-line"></i>
         <span>Gợi ý cho bạn</span>
     </h3>
 

@@ -1,7 +1,7 @@
 <!-- content Giá sốc hôm nay -->
 <div class="content__container container">
     <h3 class="content__header">
-        <img class="content__header-icon" src="<?php echo $index ?>/assets/img/icons/thunder.png" alt="">
+        <i class="content__header-icon ri-flashlight-fill"></i>
         Giá sốc hôm nay
         <div class="flashsale__time">
             <span class="flashsale__hours">16</span>
@@ -30,7 +30,7 @@
                         </div>
 
                         <div class='product__sold' style='--percent: " . $sale . "%'>
-                            <p class='product__sold--text'>Đã bán " . round($product->getSold()/10) . "</p>
+                            <p class='product__sold--text'>Đã bán " . round($product->getSold() / 10) . "</p>
                         </div>
                     </div>
                 </a>
