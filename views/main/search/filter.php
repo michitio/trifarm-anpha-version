@@ -7,24 +7,20 @@
 
         <ul class="category-list">
             <li class="category-item radio-box-item">
-                <input type='radio' hidden id='option1' name='category' value='option1'>
-                <label for='option1' class='category-item__link'>Tất cả sản phẩm</label>
+                <input type='radio' hidden id='cate-all' name='category' value='' checked>
+                <label for='cate-all' class='category-item__link'>Tất cả sản phẩm</label>
             </li>
 
-            <li class="category-item radio-box-item">
-                <input type='radio' hidden id='option2' name='category' value='option2' checked>
-                <label for='option2' class='category-item__link'>Gạo, nếp</label>
-            </li>
+            <?php
+            foreach ($cateList as $cateItem) {
+                echo
+                "<li class='category-item radio-box-item'>
+                <input type='radio' hidden id='cate-" . $cateItem->getId() . "' name='category' value='" . $cateItem->getId() . "' >
+                <label for='cate-" . $cateItem->getId() . "' class='category-item__link'>" . $cateItem->getName() . "</label>
+            </li>";
+            }
+            ?>
 
-            <li class="category-item radio-box-item">
-                <input type='radio' hidden id='option3' name='category' value='option3'>
-                <label for='option3' class='category-item__link'>Thực phẩm ăn liền</label>
-            </li>
-
-            <li class="category-item radio-box-item">
-                <input type='radio' hidden id='option4' name='category' value='option4'>
-                <label for='option4' class='category-item__link'>Rượu</label>
-            </li>
         </ul>
     </nav>
 
@@ -35,30 +31,16 @@
         </h3>
 
         <ul class="place-list">
-            <li class="place-item">
-                <input class="place-item__check" type="checkbox" id="checkbox1" name="checkbox1" value="daklak">
-                <label class="place-item__label" for="checkbox1"><span></span>Đắk Lắk</label>
-            </li>
 
-            <li class="place-item">
-                <input class="place-item__check" type="checkbox" id="checkbox2" name="checkbox2" value="hochiminh">
-                <label class="place-item__label" for="checkbox2"><span></span>Hồ Chí Minh</label>
-            </li>
-
-            <li class="place-item">
-                <input class="place-item__check" type="checkbox" id="checkbox3" name="checkbox3" value="hanoi">
-                <label class="place-item__label" for="checkbox3"><span></span>Hà Nội</label>
-            </li>
-
-            <li class="place-item">
-                <input class="place-item__check" type="checkbox" id="checkbox4" name="checkbox4" value="thainguyen">
-                <label class="place-item__label" for="checkbox4"><span></span>Thái Nguyên</label>
-            </li>
-
-            <li class="place-item">
-                <input class="place-item__check" type="checkbox" id="checkbox5" name="checkbox5" value="danang">
-                <label class="place-item__label" for="checkbox5"><span></span>Đà Nẵng</label>
-            </li>
+            <?php
+            foreach ($locaList as $locaId => $locaItem) {
+                echo
+                "<li class='place-item'>
+                <input class='place-item__check' type='checkbox' id='loca-" . $locaId . "' name='location' value='" . $locaId . "'>
+                <label class='place-item__label' for='loca-" . $locaId . "'><span></span>" . $locaItem . "</label>
+                </li>";
+            }
+            ?>
 
         </ul>
     </nav>
@@ -71,7 +53,7 @@
 
         <ul class="price-list">
             <li class="price-item radio-box-item">
-                <input type='radio' hidden id='option5' name='price' value='option5' checked>
+                <input type='radio' hidden id='option5' name='price' value='option5'>
                 <label for='option5' class='price-item__link'>Dưới 100.000</label>
             </li>
 
@@ -86,12 +68,12 @@
             </li>
 
             <li class="price-item radio-box-item">
-                <input type='radio' hidden id='option8' name='price' value='option8'>
+                <input type='radio' hidden id='option8' name='price' value='option8' checked>
                 <label for='option8' class='price-item__link'>Chọn khoảng giá</label>
                 <div class="price-box">
-                    <input id="price-start" type="text" value="0" onfocus="saveValue(event)" onkeyup="formatStringPrice(event)">
+                    <input id="price-start" type="text" value="<?php echo $priceList['min'] ?>" onfocus="saveValue(event)" onkeyup="formatStringPrice(event)">
                     <span>-</span>
-                    <input id="price-end" type="text" value="0" onfocus="saveValue(event)" onkeyup="formatStringPrice(event)">
+                    <input id="price-end" type="text" value="<?php echo $priceList['max'] ?>" onfocus="saveValue(event)" onkeyup="formatStringPrice(event)">
                     <input type="hidden" id="price-hidden" value="">
                 </div>
                 <a href="#" class="price-submit">Áp dụng</a>

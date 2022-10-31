@@ -15,6 +15,15 @@
 
     /* box-shadow: 0 1px 2.5rem rgba(0, 0, 0, 0.15); */
 
+    /* giới hạn 1 dòng */
+    /* display: block;
+    overflow: hidden;
+    line-height: 1.8rem;
+    height: 1.8rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; */
+
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;

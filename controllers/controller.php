@@ -6,7 +6,7 @@ class Controller
     protected $controller = 'home';
     protected $method = 'index';
     protected $params = [];
-    public $index = 'http://localhost:81/trifarm-anpha-version';
+    public $index = 'http://localhost/trifarm-anpha-version';
 
     public function __construct()
     {

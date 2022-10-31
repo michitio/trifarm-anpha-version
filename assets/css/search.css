@@ -359,6 +359,15 @@ a.breadcrumb__link:hover {
     margin: 8px 0;
     font-size: 1.6rem;
     font-weight: 500;
+
+    /* giới hạn 1 dòng */
+    display: block;
+    overflow: hidden;
+    line-height: 1.8rem;
+    height: 1.8rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 .product__react {

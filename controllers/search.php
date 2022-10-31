@@ -22,7 +22,15 @@ class search
             $index = $data['index'];
             $key = $data['key'];
 
+            $filter = $this->ModelProduct->searchFilter($key);
+
             $products = $this->ModelProduct->searchProduct($key);
+            $cateList = $filter['category'];
+            $locaList = $filter['location'];
+            $priceList = $filter['price'];
+
+            $priceList['max'] = number_format($priceList['max'], 0, ',', '.');
+            $priceList['min'] = number_format($priceList['min'], 0, ',', '.');
 
             $info = ['search', 'product'];
 
