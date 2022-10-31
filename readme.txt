@@ -80,7 +80,6 @@ thêm biến trên url
 
 ----------
 Mai lên lớp làm:
-database
 pagination
 search
 ajax
