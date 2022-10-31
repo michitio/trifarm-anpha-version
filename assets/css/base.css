@@ -156,7 +156,7 @@ body {
     outline: none;
     color: var(--text-color);
     line-height: 1.6rem;
-    background: #fafafa;
+    /* background: #fafafa; */
 
     display: inline-flex;
     justify-content: center;
