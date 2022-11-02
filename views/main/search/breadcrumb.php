@@ -8,7 +8,7 @@
             </path>
         </svg>
         <li class="breadcrumb__item">
-            <span class="breadcrumb__link"><?php echo $key ?></span>
+            <span class="breadcrumb__link"><?php echo $keyword ?></span>
         </li>
     </ol>
 </div>

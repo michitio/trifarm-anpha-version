@@ -55,14 +55,56 @@ class ModelProduct
         return null;
     }
 
-    public function searchProduct($key)
+    public function searchProduct($key, $category, $location, $price, $star, $sort)
     {
-        return $this->queryProduct("SELECT * FROM tb_product WHERE `name` LIKE '%" . $key . "%'");
+        $order = [
+            'default' => ' ORDER BY star*sold*review DESC',
+            'newest' => ' ORDER BY id DESC',
+            'top_seller' => ' ORDER BY sold DESC',
+            'price_desc' => ' ORDER BY price DESC',
+            'price_asc' => ' ORDER BY price ASC'
+        ];
+
+        if ($location[0] != null) {
+            $locaString = ' AND (';
+            foreach ($location as $keyLoca => $item) {
+                if ($keyLoca != 0)
+                    $locaString = $locaString . ' OR ';
+
+                $locaString = $locaString . 'location = "' . $item . '"';
+            }
+            $locaString = $locaString . ')';
+            $location = $locaString;
+        } else
+            $location = "";
+
+        if ($star != "") {
+            $star = ' AND star>=' . $star * 10;
+        }
+
+        $priceString = ($price[0] == '' ? '' : ' AND price >= ' . $price[0]) . ($price[1] == '' ? '' : ' AND price <= ' . $price[1]);
+        $price = $priceString;
+
+        // echo "SELECT * FROM tb_product 
+        //     WHERE `name` LIKE '%" . $key . "%' AND `id_category` LIKE '%" . $category . "%'" . $location . $star . $order[$sort];
+        return $this->queryProduct("SELECT * FROM tb_product 
+            WHERE `name` LIKE '%" . $key . "%' AND `id_category` LIKE '%" . $category . "%'" . $location . $price . $star . $order[$sort]);
     }
 
     public function searchFilter($key)
     {
+        $result = [];
+
         $rawData = $this->queryProduct("SELECT * FROM tb_product WHERE `name` LIKE '%" . $key . "%'");
+
+        if ($rawData == null) {
+
+            $result['category'] = [];
+            $result['location'] = [];
+            $result['price'] = ['min' => 0, 'max' => 0];
+
+            return $result;
+        }
 
         $cateArr = [];
         foreach ($rawData as $product) {
@@ -101,7 +143,6 @@ class ModelProduct
             }
         }
 
-        $result = [];
         $result['category'] = $category;
         $result['location'] = $location;
         $result['price'] = $price;

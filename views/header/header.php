@@ -284,7 +284,7 @@
             // Encode Base64
             var searchBase64 = btoa(searchURI);
             // Lưu biến vào link và chuyển trang
-            var temp = `<?php echo $index ?>/search/product/key=${searchBase64}`;
+            var temp = `<?php echo $index ?>/search/product/keyword=${searchBase64}~price=-_~sort=default`;
             window.location.href = temp;
         }
     }

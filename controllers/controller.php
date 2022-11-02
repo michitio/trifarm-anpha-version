@@ -87,12 +87,13 @@ class Controller
     {
         $params = [
             "id" => "",
-            "key" => "",
+            "keyword" => "",
             "category" => "",
             "location" => "",
             "price" => "",
             "star" => "",
-            "option" => "",
+            "sort" => "",
+            "page" => "",
             "index" => $this->index
         ];
 
@@ -100,11 +101,15 @@ class Controller
         foreach ($rawArr as $element) {
             $temp = explode("=", $element);
             if (array_key_exists($temp[0], $params)) {
-                if ($temp[0] == 'key' || $temp[0] == 'location') {
-                    // Decode Base64
-                    $decodeBase64 = base64_decode(strstr($element, $temp[1]));
-                    // Decode URI
-                    $decodeURI = urldecode($decodeBase64);
+                if ($temp[0] == 'keyword' || $temp[0] == 'location') {
+                    if ($temp[1] != "") {
+                        // Decode Base64
+                        $decodeBase64 = base64_decode(strstr($element, $temp[1]));
+                        // Decode URI
+                        $decodeURI = urldecode($decodeBase64);
+                    } else {
+                        $decodeURI = $temp[1];
+                    }
                 } else {
                     $decodeURI = $temp[1];
                 }

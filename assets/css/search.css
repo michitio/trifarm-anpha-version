@@ -202,7 +202,7 @@ a.breadcrumb__link:hover {
 
 #price-start,
 #price-end {
-    width: 70px;
+    width: calc((100% - 20px - 14px)/2);
     border: 1px solid #cccccc;
     border-radius: 8px;
     padding: 6px 8px;
@@ -232,7 +232,9 @@ a.breadcrumb__link:hover {
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
     border-radius: 8px;
-    padding: 4px 0;
+    padding: 6px 0;
+    background: white;
+    width: calc(100% - 20px - 20px);
 }
 
 .price-submit:hover {
@@ -341,14 +343,20 @@ a.breadcrumb__link:hover {
     box-shadow: 0 1px 2rem rgb(0 0 0 / 15%);
 }
 
+.card:hover .product__img{
+    background-size: 96%;
+}
+
 .product__img {
     padding-top: 100%;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 90%;
     background-position: center;
 
     border-radius: 8px;
     position: relative;
+
+    transition: all linear 0.2s;
 }
 
 .card-body {
@@ -363,8 +371,8 @@ a.breadcrumb__link:hover {
     /* giới hạn 1 dòng */
     display: block;
     overflow: hidden;
-    line-height: 1.8rem;
-    height: 1.8rem;
+    line-height: 2rem;
+    height: 2rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;

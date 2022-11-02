@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="<?php echo $index ?>/assets/css/search.css">
+<?php require_once "navigatedLink.php" ?>
 
 <?php
 // breadcrumb

@@ -68,13 +68,6 @@ mặc định là chọn khoảng giá từ thấp nhất đến cao nhất
 
 đánh giá thêm mặc định tất cả
 
-sort
-phổ biến là số sao
-mới nhất là theo id đảo ngược
-bán chạy xếp theo sold
-giá cao đến thấp
-giá thấp đến cao
-
 page
 thêm biến trên url
 

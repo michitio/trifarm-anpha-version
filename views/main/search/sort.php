@@ -1,29 +1,29 @@
 <div class="filter">
-    <p class="filter__header">Kết quả tìm kiếm cho `<?php echo $key ?>`</p>
+    <p class="filter__header">Kết quả tìm kiếm cho `<?php echo $keyword ?>`</p>
     <div class="filter__action">
         <button class="filter__btn btn">
-            <input type='radio' hidden id='option20' name='sort' value='option20' checked>
-            <label for='option20' class='sort-item__link'>Phổ biến</label>
+            <input type='radio' hidden id='default' name='sort' value='default' <?php echo $sort == 'default' ? 'checked' : ''; ?>>
+            <label for='default' class='sort-item__link'>Phổ biến</label>
         </button>
 
         <button class="filter__btn btn">
-            <input type='radio' hidden id='option21' name='sort' value='option21'>
-            <label for='option21' class='sort-item__link'>Mới nhất</label>
+            <input type='radio' hidden id='newest' name='sort' value='newest' <?php echo $sort == 'newest' ? 'checked' : ''; ?>>
+            <label for='newest' class='sort-item__link'>Mới nhất</label>
         </button>
 
         <button class="filter__btn btn">
-            <input type='radio' hidden id='option22' name='sort' value='option22'>
-            <label for='option22' class='sort-item__link'>Bán chạy</label>
+            <input type='radio' hidden id='top_seller' name='sort' value='top_seller' <?php echo $sort == 'top_seller' ? 'checked' : ''; ?>>
+            <label for='top_seller' class='sort-item__link'>Bán chạy</label>
         </button>
 
         <button class="filter__btn btn">
-            <input type='radio' hidden id='option23' name='sort' value='option23'>
-            <label for='option23' class='sort-item__link'>Giá thấp đến cao</label>
+            <input type='radio' hidden id='price_desc' name='sort' value='price_desc' <?php echo $sort == 'price_desc' ? 'checked' : ''; ?>>
+            <label for='price_desc' class='sort-item__link'>Giá cao đến thấp</label>
         </button>
 
         <button class="filter__btn btn">
-            <input type='radio' hidden id='option24' name='sort' value='option24'>
-            <label for='option24' class='sort-item__link'>Giá cao đến thấp</label>
+            <input type='radio' hidden id='price_asc' name='sort' value='price_asc' <?php echo $sort == 'price_asc' ? 'checked' : ''; ?>>
+            <label for='price_asc' class='sort-item__link'>Giá thấp đến cao</label>
         </button>
 
         <div class="filter__page">
@@ -43,3 +43,12 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('.filter__btn.btn').click(function(e) {
+        var sort = $(this).find("input").val();
+        sort = '~sort=' + sort;
+
+        navigatedLink('sort', sort);
+    });
+</script>

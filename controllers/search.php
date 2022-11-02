@@ -18,13 +18,22 @@ class search
 
     public function product($data)
     {
-        if (isset($data['index']) && isset($data['key'])) {
+        if (isset($data['index']) && isset($data['keyword'])) {
             $index = $data['index'];
-            $key = $data['key'];
+            $keyword = $data['keyword'];
+            $category = $data['category'];
+            $sort = $data['sort'];
+            $location = $data['location'];
+            $locationArr = explode('-', $location);
+            $star = $data['star'];
+            $price = $data['price'];
+            $page = $data['page'];
+            $priceArr = str_replace("_", "", $price);
+            $priceArr = explode('-', $priceArr);
 
-            $filter = $this->ModelProduct->searchFilter($key);
+            $products = $this->ModelProduct->searchProduct($keyword, $category, $locationArr, $priceArr, $star, $sort);
+            $filter = $this->ModelProduct->searchFilter($keyword);
 
-            $products = $this->ModelProduct->searchProduct($key);
             $cateList = $filter['category'];
             $locaList = $filter['location'];
             $priceList = $filter['price'];
