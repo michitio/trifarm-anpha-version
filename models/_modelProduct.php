@@ -57,14 +57,7 @@ class ModelProduct
 
     public function searchProduct($key, $category, $location, $price, $star, $sort, $page, $productPerPage)
     {
-        $order = [
-            'default' => ' ORDER BY star*sold*review DESC',
-            'newest' => ' ORDER BY id DESC',
-            'top_seller' => ' ORDER BY sold DESC',
-            'price_desc' => ' ORDER BY price DESC',
-            'price_asc' => ' ORDER BY price ASC'
-        ];
-
+        // location
         if ($location[0] != null) {
             $locaString = ' AND (';
             foreach ($location as $keyLoca => $item) {
@@ -78,12 +71,23 @@ class ModelProduct
         } else
             $location = "";
 
+        // price
+        $priceString = ($price[0] == '' ? '' : ' AND price >= ' . $price[0]) . ($price[1] == '' ? '' : ' AND price <= ' . $price[1]);
+        $price = $priceString;
+
+        // star
         if ($star != "") {
             $star = ' AND star>=' . $star * 10;
         }
 
-        $priceString = ($price[0] == '' ? '' : ' AND price >= ' . $price[0]) . ($price[1] == '' ? '' : ' AND price <= ' . $price[1]);
-        $price = $priceString;
+        // sort
+        $order = [
+            'default' => ' ORDER BY star*sold*review DESC',
+            'newest' => ' ORDER BY id DESC',
+            'top_seller' => ' ORDER BY sold DESC',
+            'price_desc' => ' ORDER BY price DESC',
+            'price_asc' => ' ORDER BY price ASC'
+        ];
 
         // điều kiện tìm kiếm không phân trang
         if ($page == 0 && $productPerPage == 0) {
@@ -102,9 +106,9 @@ class ModelProduct
     public function searchFilter($key)
     {
         $result = [];
-
         $rawData = $this->queryProduct("SELECT * FROM tb_product WHERE `name` LIKE '%" . $key . "%'");
 
+        // không tìm thấy sản phẩm
         if ($rawData == null) {
 
             $result['category'] = [];
@@ -114,18 +118,16 @@ class ModelProduct
             return $result;
         }
 
+        // category
         $cateArr = [];
         foreach ($rawData as $product) {
             array_push($cateArr, $product->getIdCategory());
         }
-
-        // category
         $cateArr = array_unique($cateArr);
         sort($cateArr);
 
         $category = [];
         $this->ModelCategory = new ModelCategory();
-
         foreach ($cateArr as $cate) {
             array_push($category, $this->ModelCategory->getCategory($cate));
         }
