@@ -85,8 +85,13 @@ class ModelProduct
         $priceString = ($price[0] == '' ? '' : ' AND price >= ' . $price[0]) . ($price[1] == '' ? '' : ' AND price <= ' . $price[1]);
         $price = $priceString;
 
-        $from = ($page - 1) * $productPerPage;
-        $page = ' LIMIT ' . $from . ', ' . $productPerPage;
+        // điều kiện tìm kiếm không phân trang
+        if ($page == 0 && $productPerPage == 0) {
+            $page = "";
+        } else {
+            $from = ($page - 1) * $productPerPage;
+            $page = ' LIMIT ' . $from . ', ' . $productPerPage;
+        }
 
         // echo "SELECT * FROM tb_product 
         //     WHERE `name` LIKE '%" . $key . "%' AND `id_category` LIKE '%" . $category . "%'" . $location . $star . $order[$sort] . $page;
@@ -149,8 +154,6 @@ class ModelProduct
         $result['category'] = $category;
         $result['location'] = $location;
         $result['price'] = $price;
-        $result['quantity'] = count($rawData);
-        $result['productPerPage'] = 20;
         return $result;
     }
 }

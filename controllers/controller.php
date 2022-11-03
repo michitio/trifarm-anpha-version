@@ -102,6 +102,7 @@ class Controller
             $temp = explode("=", $element);
             if (array_key_exists($temp[0], $params)) {
                 if ($temp[0] == 'keyword' || $temp[0] == 'location') {
+                    // keyword và location được mã hoá do có tiếng Việt
                     if ($temp[1] != "") {
                         // Decode Base64
                         $decodeBase64 = base64_decode(strstr($element, $temp[1]));

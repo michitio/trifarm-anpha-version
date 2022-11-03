@@ -36,8 +36,9 @@ class search
             $cateList = $filter['category'];
             $locaList = $filter['location'];
             $priceList = $filter['price'];
-            $totalProduct = $filter['quantity'];
-            $productPerPage = $filter['productPerPage'];
+
+            $productPerPage = 20;
+            $totalProduct = count($this->ModelProduct->searchProduct($keyword, $category, $locationArr, $priceArr, $star, $sort, 0, 0));
             $totalPage = ceil($totalProduct / $productPerPage);
 
             $products = $this->ModelProduct->searchProduct($keyword, $category, $locationArr, $priceArr, $star, $sort, $page, $productPerPage);

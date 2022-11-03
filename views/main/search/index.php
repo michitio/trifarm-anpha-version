@@ -15,7 +15,7 @@ require_once "breadcrumb.php";
             ?>
         </div>
 
-        <div class="col-xl-10">
+        <div class="col-xl-10" style="position: relative; padding-bottom: 100px;">
             <!-- sort -->
             <div class="row g-3">
                 <div class="col-xl-12">
@@ -26,13 +26,13 @@ require_once "breadcrumb.php";
             </div>
 
             <!-- list_product -->
-            <div class="row g-3 row-cols-5 mt-0" style="min-height: 1080px;">
+            <div class="row g-3 row-cols-5 mt-0">
                 <?php
                 require_once "list_product.php";
                 ?>
             </div>
 
-            <div class="row g-3">
+            <div class="row g-3" style="position: absolute; bottom: 0; width: 100%;">
                 <div class="col-xl-12">
                     <?php
                     require_once "pagination.php";

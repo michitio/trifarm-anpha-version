@@ -33,14 +33,5 @@ bảng user đăng nhập: làm sau
     public $index = 'http://localhost/trifarm-anpha-version';
 
 
-
--------SEARCH-------
-
-tối ưu css & code trang search
-
-pagination
-ajax
-lịch sử tìm kiếm
-
 database add
 https://docs.google.com/spreadsheets/d/1hXD336KKycFJdMWwEnL7JpLiyxYaYvxDH2sLBbLetys/edit#gid=0

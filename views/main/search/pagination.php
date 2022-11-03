@@ -1,7 +1,7 @@
 <?php
 $pageStart = ($page - 2) > 0 ? ($page - 2) : 1;
 $pageEnd = ($pageStart + 4) < $totalPage ? ($pageStart + 4) : $totalPage;
-$pageStart = $pageEnd == $totalPage ? $totalPage - 4 : $pageStart;
+$pageStart = $pageEnd == $totalPage && $pageEnd - 4 > 0 ? $totalPage - 4 : $pageStart;
 ?>
 
 <div class="pagination">
@@ -36,6 +36,8 @@ $pageStart = $pageEnd == $totalPage ? $totalPage - 4 : $pageStart;
 <script>
     $('.pagination-item__link:not(:has(*))').click(function(e) {
         var page = $(this).text();
+        if (page == <?php echo $page ?>)
+            return;
         page = '~page=' + page;
 
         navigatedLink('page', page);

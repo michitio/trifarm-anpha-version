@@ -18,7 +18,7 @@
         foreach ($hotsale as $product) {
             $sale = rand(10, 100);
             echo "
-            <div class='col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2'>
+            <div class='col-6 col-md-4 col-lg-3 col-xl-2'>
                 <a href='" . $index . "/detail/product/id=" . $product->getId() . "' class='card__flashsale card'>
                     <div style='background: center / contain no-repeat url(" . $product->getImg() . ");' class='card-img-top'></div>
 

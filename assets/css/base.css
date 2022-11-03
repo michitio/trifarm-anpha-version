@@ -354,7 +354,7 @@ body {
     align-items: center;
     justify-content: center;
     list-style: none;
-    margin: 36px 0;
+    margin: 24px 0;
 }
 
 .pagination-item {
@@ -383,7 +383,7 @@ body {
 
 .pagination-item--active .pagination-item__link:hover {
     color: var(--white-color);
-    background-color: rgba(var(--primary-dark-code), 0.6);
+    background-color: rgba(var(--primary-dark-code), 0.7);
 }
 
 .pagination-item__link {
