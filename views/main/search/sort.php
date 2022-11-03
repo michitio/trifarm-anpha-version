@@ -28,15 +28,15 @@
 
         <div class="filter__page">
             <span class="filter__page-num">
-                <span class="filter__page-current">1</span> / 14
+                <span class="filter__page-current"><?php echo $page; ?></span> / <?php echo $totalPage; ?>
             </span>
 
             <div class="filter__page-control">
-                <a href="#" class="filter__page-btn filter__page-btn--disable">
+                <a class="filter__page-btn filter__page-left <?php echo $page == 1 ? 'filter__page-btn--disable' : '' ?>">
                     <i class="filter__page-icon fa-solid fa-chevron-left"></i>
                 </a>
 
-                <a href="#" class="filter__page-btn">
+                <a class="filter__page-btn filter__page-right <?php echo $page == $totalPage ? 'filter__page-btn--disable' : '' ?>">
                     <i class="filter__page-icon fa-solid fa-chevron-right"></i>
                 </a>
             </div>
@@ -50,5 +50,16 @@
         sort = '~sort=' + sort;
 
         navigatedLink('sort', sort);
+    });
+
+    $('.filter__page-btn').click(function(e) {
+        var page = <?php echo $page ?>;
+        if ($(this).hasClass("filter__page-left"))
+            page--;
+        else
+            page++;
+        page = '~page=' + page;
+
+        navigatedLink('page', page);
     });
 </script>

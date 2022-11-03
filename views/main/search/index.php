@@ -26,7 +26,7 @@ require_once "breadcrumb.php";
             </div>
 
             <!-- list_product -->
-            <div class="row g-3 row-cols-5 mt-0">
+            <div class="row g-3 row-cols-5 mt-0" style="min-height: 1080px;">
                 <?php
                 require_once "list_product.php";
                 ?>

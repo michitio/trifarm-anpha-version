@@ -36,46 +36,11 @@ bảng user đăng nhập: làm sau
 
 -------SEARCH-------
 
-hoàn hiện các nút bấm filter + sort
-
-tối ưu css trang search
+tối ưu css & code trang search
 
 pagination
 ajax
 lịch sử tìm kiếm
-
--------------
-
-cách làm danh mục sản phẩm
-
-PHP
-
-query list sản phẩm
-dùng SELECT DISTINCT lấy list id category
-tạo thêm model lấy category từ list
-hiển thị list ra
-value radio là các id_category hoặc để trống cho tất cả sản phẩm
-js khi click thì lấy value từ $key có sẵn + có cate thì thêm ~category=1
-chuyển trang
-
-mặc định tất cả sản phẩm
-+những loại sản phẩm khác
-
-nơi bán là checkbox cách nhau bằng dấu - (giống lọc giá)
-còn lại giống danh mục sp
-
-mặc định là chọn khoảng giá từ thấp nhất đến cao nhất
-
-đánh giá thêm mặc định tất cả
-
-page
-thêm biến trên url
-
------------
-Mai lên lớp làm:
-pagination
-search
-ajax
 
 database add
 https://docs.google.com/spreadsheets/d/1hXD336KKycFJdMWwEnL7JpLiyxYaYvxDH2sLBbLetys/edit#gid=0

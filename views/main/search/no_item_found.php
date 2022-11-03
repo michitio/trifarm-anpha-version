@@ -11,7 +11,7 @@
     }
 
     .not_found_box {
-        margin-top: 60px;
+        margin-bottom: 120px;
         width: 100%;
         display: flex;
         align-items: center;

@@ -55,7 +55,7 @@ class ModelProduct
         return null;
     }
 
-    public function searchProduct($key, $category, $location, $price, $star, $sort)
+    public function searchProduct($key, $category, $location, $price, $star, $sort, $page, $productPerPage)
     {
         $order = [
             'default' => ' ORDER BY star*sold*review DESC',
@@ -85,10 +85,13 @@ class ModelProduct
         $priceString = ($price[0] == '' ? '' : ' AND price >= ' . $price[0]) . ($price[1] == '' ? '' : ' AND price <= ' . $price[1]);
         $price = $priceString;
 
+        $from = ($page - 1) * $productPerPage;
+        $page = ' LIMIT ' . $from . ', ' . $productPerPage;
+
         // echo "SELECT * FROM tb_product 
-        //     WHERE `name` LIKE '%" . $key . "%' AND `id_category` LIKE '%" . $category . "%'" . $location . $star . $order[$sort];
+        //     WHERE `name` LIKE '%" . $key . "%' AND `id_category` LIKE '%" . $category . "%'" . $location . $star . $order[$sort] . $page;
         return $this->queryProduct("SELECT * FROM tb_product 
-            WHERE `name` LIKE '%" . $key . "%' AND `id_category` LIKE '%" . $category . "%'" . $location . $price . $star . $order[$sort]);
+            WHERE `name` LIKE '%" . $key . "%' AND `id_category` LIKE '%" . $category . "%'" . $location . $price . $star . $order[$sort] . $page);
     }
 
     public function searchFilter($key)
@@ -146,6 +149,8 @@ class ModelProduct
         $result['category'] = $category;
         $result['location'] = $location;
         $result['price'] = $price;
+        $result['quantity'] = count($rawData);
+        $result['productPerPage'] = 20;
         return $result;
     }
 }

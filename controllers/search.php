@@ -27,16 +27,20 @@ class search
             $locationArr = explode('-', $location);
             $star = $data['star'];
             $price = $data['price'];
-            $page = $data['page'];
+            $page = $data['page'] == "" ? 1 : $data['page'];
             $priceArr = str_replace("_", "", $price);
             $priceArr = explode('-', $priceArr);
 
-            $products = $this->ModelProduct->searchProduct($keyword, $category, $locationArr, $priceArr, $star, $sort);
             $filter = $this->ModelProduct->searchFilter($keyword);
 
             $cateList = $filter['category'];
             $locaList = $filter['location'];
             $priceList = $filter['price'];
+            $totalProduct = $filter['quantity'];
+            $productPerPage = $filter['productPerPage'];
+            $totalPage = ceil($totalProduct / $productPerPage);
+
+            $products = $this->ModelProduct->searchProduct($keyword, $category, $locationArr, $priceArr, $star, $sort, $page, $productPerPage);
 
             $priceList['max'] = number_format($priceList['max'], 0, ',', '.');
             $priceList['min'] = number_format($priceList['min'], 0, ',', '.');

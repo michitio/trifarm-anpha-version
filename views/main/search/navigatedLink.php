@@ -28,8 +28,8 @@
 
         link['sort'] = '~sort=' + '<?php echo $sort ?>';
 
-        link['page'] = '<?php echo $page ?>';
-        link['page'] = link['page'] != "" ? '~page=' + link['page'] : "";
+        // page khi click các filter và sort luôn về 1, trừ khi click page 
+        link['page'] = "";
 
 
         link[key] = value;
