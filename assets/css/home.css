@@ -89,6 +89,15 @@
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 4px;
+
+    /* giới hạn 1 dòng */
+    display: block;
+    overflow: hidden;
+    line-height: 2rem;
+    height: 2rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 .product__rating {

@@ -343,14 +343,15 @@ a.breadcrumb__link:hover {
     box-shadow: 0 1px 2rem rgb(0 0 0 / 15%);
 }
 
-.card:hover .product__img{
-    background-size: 94%;
-}
+/* .card:hover .product__img{ */
+    /* background-size: 92%; */
+/* } */
 
 .product__img {
     padding-top: 100%;
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: contain;
+    /* background-size: 86%; */
     background-position: center;
 
     border-radius: 8px;

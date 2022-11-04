@@ -41,5 +41,28 @@
         ?>
     </div>
 
-    <a href="#" class="content__container-see-more">Xem thêm</a>
+    <button class="content__container-see-more">Xem thêm</button>
 </div>
+
+<script>
+    var recommend_page = 1;
+
+    // ajax
+    $('.content__container-see-more').click(function(e) {
+        recommend_page++;
+
+        // điều kiện chặn ajax vì có ít sản phẩm (chỉ có 13 trang - 18/230 sản phẩm)
+        if (recommend_page > 14)
+            return;
+
+        var _this = this;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                $(_this).parent().find(".row").append(this.responseText);
+            };
+        };
+        xmlhttp.open("GET", "<?php echo $index ?>/home/load_recommend/page=" + recommend_page, true);
+        xmlhttp.send();
+    });
+</script>

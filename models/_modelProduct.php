@@ -37,7 +37,6 @@ class ModelProduct
     public function getProductListLimit($num, $page)
     {
         return $this->queryProduct("SELECT * FROM tb_product limit " . $page . ", " . $num);
-        // $data;
     }
 
     public function getProductListByCategory($id_cate)
@@ -86,7 +85,8 @@ class ModelProduct
             'newest' => ' ORDER BY id DESC',
             'top_seller' => ' ORDER BY sold DESC',
             'price_desc' => ' ORDER BY price DESC',
-            'price_asc' => ' ORDER BY price ASC'
+            'price_asc' => ' ORDER BY price ASC',
+            'biggest_discount' => ' ORDER BY old_price/price DESC'
         ];
 
         // điều kiện tìm kiếm không phân trang

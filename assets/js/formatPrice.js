@@ -5,7 +5,8 @@ var productPrices = [...productPriceNew, ...productPriceOld];
 function formatPrice() {
 
     for (var element of productPrices) {
-        var intValue = parseInt(element.innerHTML);
+        strValue = element.innerHTML.replaceAll('.', '');
+        var intValue = parseInt(strValue);
         var result = intValue.toLocaleString('de-DE') + " ₫";
         element.innerHTML = result;
     }
