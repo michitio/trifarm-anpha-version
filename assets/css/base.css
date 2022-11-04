@@ -339,6 +339,7 @@ body {
 
 .filter__page-btn--disable:hover {
     color: #ccc;
+    background-color: unset;
     cursor: context-menu;
 }
 

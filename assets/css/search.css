@@ -344,7 +344,7 @@ a.breadcrumb__link:hover {
 }
 
 /* .card:hover .product__img{ */
-    /* background-size: 92%; */
+/* background-size: 92%; */
 /* } */
 
 .product__img {
@@ -481,4 +481,10 @@ a.breadcrumb__link:hover {
 .product-item__trust-icon {
     margin-right: 3px;
     font-size: 1rem;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .product__price-new {
+        font-size: 1.8rem;
+    }
 }

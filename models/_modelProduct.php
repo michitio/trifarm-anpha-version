@@ -56,6 +56,11 @@ class ModelProduct
 
     public function searchProduct($key, $category, $location, $price, $star, $sort, $page, $productPerPage)
     {
+        // star
+        if ($category != "") {
+            $category = ' AND `id_category` = ' . $category;
+        }
+
         // location
         if ($location[0] != null) {
             $locaString = ' AND (';
@@ -100,7 +105,7 @@ class ModelProduct
         // echo "SELECT * FROM tb_product 
         //     WHERE `name` LIKE '%" . $key . "%' AND `id_category` LIKE '%" . $category . "%'" . $location . $star . $order[$sort] . $page;
         return $this->queryProduct("SELECT * FROM tb_product 
-            WHERE `name` LIKE '%" . $key . "%' AND `id_category` LIKE '%" . $category . "%'" . $location . $price . $star . $order[$sort] . $page);
+            WHERE `name` LIKE '%" . $key . "%'" . $category . $location . $price . $star . $order[$sort] . $page);
     }
 
     public function searchFilter($key)

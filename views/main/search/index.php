@@ -9,13 +9,15 @@ require_once "breadcrumb.php";
 <!-- content -->
 <div class="content__container container">
     <div class="row g-3">
-        <div class="col-xl-2">
+
+        <!-- filter -->
+        <div class="col-lg-3 col-xl-2">
             <?php
             require_once "filter.php";
             ?>
         </div>
 
-        <div class="col-xl-10" style="position: relative; padding-bottom: 100px;">
+        <div class="col-lg-9 col-xl-10" style="position: relative; padding-bottom: 100px;">
             <!-- sort -->
             <div class="row g-3">
                 <div class="col-xl-12">
@@ -26,7 +28,7 @@ require_once "breadcrumb.php";
             </div>
 
             <!-- list_product -->
-            <div class="row g-3 row-cols-5 mt-0">
+            <div class="row g-3 row-xl-cols-5 row-md-cols-4 mt-0">
                 <?php
                 require_once "list_product.php";
                 ?>

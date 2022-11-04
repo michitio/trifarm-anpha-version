@@ -30,79 +30,6 @@ ul {
     }
 }
 
-/* @media (min-width: 768px) and (max-width: 1024px) {
-
-    .container {
-        max-width: calc(100% - 64px);
-    }
-}
-
-@media (max-width: 767px) {
-
-    .container {
-        max-width: calc(100% - 32px);
-    }
-} */
-
-@media (min-width: 1200px) {
-
-    .offset-xl-0-5 {
-        margin-left: 4.166666667%;
-    }
-
-    .offset-xl-0-25 {
-        margin-left: 2.083333333%;
-    }
-
-    .col-xl-1-5 {
-        flex: 0 0 auto;
-        width: 12.5%;
-    }
-
-    .col-xl-1-75 {
-        flex: 0 0 auto;
-        width: 14.58333333%;
-    }
-
-    .col-xl-2-5 {
-        flex: 0 0 auto;
-        width: 20.83333333%;
-    }
-
-    .col-xl-4-5 {
-        flex: 0 0 auto;
-        width: 37.5%;
-    }
-}
-
-@media (min-width: 992px) {
-
-    .offset-lg-0 {
-        margin-left: 0 !important;
-    }
-
-    .offset-lg-0-5 {
-        margin-left: 4.166666667%;
-    }
-
-    .offset-lg-0-25 {
-        margin-left: 2.083333333%;
-    }
-
-    .col-lg-1-5 {
-        flex: 0 0 auto;
-        width: 12.5%;
-    }
-
-    .col-lg-1-75 {
-        flex: 0 0 auto;
-        width: 14.58333333%;
-    }
-
-
-}
-
-
 @media (min-width: 768px) {
 
     .offset-md-0-5 {
@@ -133,6 +60,84 @@ ul {
         width: 14.58333333%;
     }
 
+    .row-md-cols-4>* {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+
+
+}
+
+@media (min-width: 992px) {
+
+    .offset-lg-0 {
+        margin-left: 0 !important;
+    }
+
+    .offset-lg-0-5 {
+        margin-left: 4.166666667%;
+    }
+
+    .offset-lg-0-25 {
+        margin-left: 2.083333333%;
+    }
+
+    .col-lg-1-5 {
+        flex: 0 0 auto;
+        width: 12.5%;
+    }
+
+    .col-lg-1-75 {
+        flex: 0 0 auto;
+        width: 14.58333333%;
+    }
+
+    .row-lg-cols-4>* {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+
+    .row-lg-cols-3>* {
+        flex: 0 0 auto;
+        width: 33.3333333333%;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .offset-xl-0-5 {
+        margin-left: 4.166666667%;
+    }
+
+    .offset-xl-0-25 {
+        margin-left: 2.083333333%;
+    }
+
+    .col-xl-1-5 {
+        flex: 0 0 auto;
+        width: 12.5%;
+    }
+
+    .col-xl-1-75 {
+        flex: 0 0 auto;
+        width: 14.58333333%;
+    }
+
+    .col-xl-2-5 {
+        flex: 0 0 auto;
+        width: 20.83333333%;
+    }
+
+    .col-xl-4-5 {
+        flex: 0 0 auto;
+        width: 37.5%;
+    }
+
+    .row-xl-cols-5>* {
+        flex: 0 0 auto;
+        width: 20%;
+    }
 
 }
 

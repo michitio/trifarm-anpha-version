@@ -17,6 +17,11 @@
         </button>
 
         <button class="filter__btn btn">
+            <input type='radio' hidden id='biggest_discount' name='sort' value='biggest_discount' <?php echo $sort == 'biggest_discount' ? 'checked' : ''; ?>>
+            <label for='biggest_discount' class='sort-item__link'>Giảm giá nhiều</label>
+        </button>
+
+        <button class="filter__btn btn">
             <input type='radio' hidden id='price_desc' name='sort' value='price_desc' <?php echo $sort == 'price_desc' ? 'checked' : ''; ?>>
             <label for='price_desc' class='sort-item__link'>Giá cao đến thấp</label>
         </button>
@@ -26,7 +31,7 @@
             <label for='price_asc' class='sort-item__link'>Giá thấp đến cao</label>
         </button>
 
-        <div class="filter__page">
+        <div class="filter__page d-none d-xl-flex">
             <span class="filter__page-num">
                 <span class="filter__page-current"><?php echo $page; ?></span> / <?php echo $totalPage; ?>
             </span>
@@ -52,7 +57,7 @@
         navigatedLink('sort', sort);
     });
 
-    $('.filter__page-btn').click(function(e) {
+    $('.filter__page-btn:not(.filter__page-btn--disable)').click(function(e) {
         var page = <?php echo $page ?>;
         if ($(this).hasClass("filter__page-left"))
             page--;
