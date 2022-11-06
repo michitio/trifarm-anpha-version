@@ -35,3 +35,25 @@ bảng user đăng nhập: làm sau
 
 database add
 https://docs.google.com/spreadsheets/d/1hXD336KKycFJdMWwEnL7JpLiyxYaYvxDH2sLBbLetys/edit#gid=0
+
+
+Khi đăng ký
+
+1. điền form
+2. form gửi cho xulydangky.php bằng post
+3. ở xử lý đăng ký:
+	check xem điền đủ các mục chưa
+	check xem dữ liệu vào có đúng không - bao gồm cả captcha
+	check xem đã tồn tại username trong hệ thống chưa
+
+	gửi các loại message về:
+		username đã tồn tại
+		đăng ký thành công
+		các ô nhập không đúng (captcha), chưa thoả điều kiện
+
+	dùng các hàm kiểm tra (độ dài chuỗi, tài khoản tồn tại)
+
+4. nếu thoả điều kiện đăng ký thì gọi user module (đăng nhập, đăng ký đăng xuất) cho đăng ký
+
+5. gửi message về trang đăng ký ban đầu và hiển thị thông tin cho người dùng
+
