@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2022 at 12:01 PM
+-- Generation Time: Nov 06, 2022 at 07:22 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -30,7 +30,6 @@ USE `db_trifarm`;
 -- Table structure for table `tb_category`
 --
 
-DROP TABLE IF EXISTS `tb_category`;
 CREATE TABLE IF NOT EXISTS `tb_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
@@ -53,9 +52,9 @@ INSERT INTO `tb_category` (`id`, `name`, `img`) VALUES
 (7, 'Cà phê', 'caphe.png'),
 (8, 'Tiêu, Điều', 'tieu.png'),
 (9, 'Bơ, Sữa, phô mai', 'sua.png'),
-(10, 'Mứt, Trái cây sấy', 'trai_cay_say.png'),
-(11, 'Thực phẩm chay', 'mut.png'),
-(12, 'Nước trái cây', 'ruou.png');
+(10, 'Mứt, Trái cây sấy', 'mut.png'),
+(11, 'Thực phẩm chay', 'dau_hu_trang.png'),
+(12, 'Nước trái cây', 'nuoc_trai_cay.png');
 
 -- --------------------------------------------------------
 
@@ -63,7 +62,6 @@ INSERT INTO `tb_category` (`id`, `name`, `img`) VALUES
 -- Table structure for table `tb_product`
 --
 
-DROP TABLE IF EXISTS `tb_product`;
 CREATE TABLE IF NOT EXISTS `tb_product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -79,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `tb_product` (
   `id_category` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=134 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=231 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `tb_product`
@@ -105,7 +103,7 @@ INSERT INTO `tb_product` (`id`, `name`, `desc`, `img`, `price`, `location`, `sta
 (17, 'Trà xanh ', 'Từ những cây trà có tuổi đời hàng trăm năm do nhiều thế hệ từ xa xưa để lại hoàn toàn tự nhiên hầu như không có sự can thiệp của con người. Trà xanh có màu nước xanh óng ánh ánh vàng, phảng phất hương thơm của núi rừng Tây Bắc, vị thanh, ngọt hậu giữ lâu trong cổ họng.', 'https://cdn.tgdd.vn/Products/Images/2385/224780/bhx/tra-xanh-huu-co-vherbs-shan-tuyet-co-thu-49g-202007230825591357.jpg', 56000, 'Nhật Bản', 43, 91, 206, '200g~500g', 65000, 6),
 (18, 'Cà phê nguyên hạt rang mộc The JUN Passion', 'Từ những hạt cà phê ngon nhất tại vùng đất đỏ bazan kết hợp với công thức rang xay mộc độc quyền, có thể vừa pha phin, vừa pha máy. Ngụm đầu của ly cà phê The JUN Passion có thể đọng lại vị đắng đậm cùng một chút chua thanh đặc trưng của cà phê nguyên chất trên đầu lưỡi', 'https://cdn.tgdd.vn/Products/Images/2883/207792/bhx/ca-phe-rang-xay-moc-the-jun-passion-345g-202001080955013927.jpg', 180000, 'Brazil', 46, 56, 210, '500g~1kg', 240000, 7),
 (19, 'Cà phê rang xay mộc The JUN Challenge', 'Sản phẩm là sự hòa quyện giữa vị của các hạt cà phê cùng với công thức ủ độc quyền từ các chuyên gia của The JUN chính là điểm đặc biệt và khác biệt của cà phê The JUN đối với các sản phẩm cà phê khác.', 'https://cdn.tgdd.vn/Products/Images/2883/207793/bhx/ca-phe-rang-xay-moc-the-jun-challenge-345g-202001080954054227.jpg', 180000, 'Brazil', 47, 81, 150, '500g~1kg', 250000, 7),
-(20, 'Bột trà xanh Matcha Natsu', 'Bột trà xanh Matcha được nhập khẩu 100% từ Nhật Bản, sản phẩm là tự nhiên và nguyên chất, không chứa bất kì hóa chất hay hương liệu nào khác', 'https://matchashop.vn/upload/images/bot-tra-xanh-matcha-natsu-1kg.jpg', 1100000, 'Nhật Bản', 43, 93, 189, '200g~500g', 135000, 6),
+(20, 'Bột trà xanh Matcha Natsu', 'Bột trà xanh Matcha được nhập khẩu 100% từ Nhật Bản, sản phẩm là tự nhiên và nguyên chất, không chứa bất kì hóa chất hay hương liệu nào khác', 'https://matchashop.vn/upload/images/bot-tra-xanh-matcha-natsu-1kg.jpg', 305000, 'Nhật Bản', 43, 93, 189, '200g~500g', 335000, 6),
 (21, 'Trái Cây Khô Hàn Quốc 200gr', 'Trái cây khô hỗn hợp là nguyên liệu làm bánh được sử dụng rộng rãi trong các món bánh, có mùi vị thơm ngon và giàu chất dinh dưỡng, đảm bảo vệ sinh an toàn thực phẩm.', 'https://product.hstatic.net/1000186075/product/8809319240341_9f5410dc36514bb180c1718e0a82b6bf_master.jpg', 65000, 'Hàn Quốc', 33, 41, 192, '200g', 80000, 10),
 (22, 'Mít sấy', ' Mít rất giàu các vitamin nhóm B (B1, B2, B6), vitamin C rất tốt cho hệ tiêu hóa và phụ nữ mang thai. Mít chứa rất ít lượng chất béo bão hòa, cholesterol và natri giúp tăng cường hệ thống miễn dịch, tốt cho tim mạch. Đường thiên nhiên (fructose và sucrose) trong mít giúp bổ sung năng lượng cho cơ thể.', 'https://cf.shopee.vn/file/ead70e7800660bdaa19efe3455425dc7', 70000, 'Việt Nam', 41, 41, 100, '300g~500g', 88000, 10),
 (23, 'Sầu Riêng Sấy Giòn', 'Sầu riêng sấy hương vị thơm ngon, bổ dưỡng, nguyên chất có vị ngọt nhẹ rất đặc trưng, béo vừa chứ không ngậy pha lẫn vào nhau tuyệt vời đến độ khó diễn tả khiến nhiều người thích đến phát nghiện, hoàn toàn không sử dụng hóa chất và phụ gia thực phẩm. Sầu riêng sấy được đóng gói tiện dụng, thuận lợi mang theo mỗi khi đi xa hay dành làm quà tặng vì nó rất lạ, ngon, mang hương vị thuần Việt', 'http://traicayhatsay.com/upload/images/sau-rieng-say-dat-biet-200g-cua-hang-trai-cay-hat-say.jpg', 220000, 'Việt Nam', 43, 22, 98, '300g~500g', 300000, 10),
@@ -113,7 +111,7 @@ INSERT INTO `tb_product` (`id`, `name`, `desc`, `img`, `price`, `location`, `sta
 (25, 'Khoai lang vàng sấy dẻo', 'Có rất nhiều loại rau củ có thể được chế biến thành dạng chip và ăn cũng giòn như bí đỏ, cà rốt, củ cải đường, củ cải đỏ…nhưng thậm chí còn thơm ngon và giàu dinh dưỡng hơn. Một trong số đó không thể không nhắc tới khoai lang sấy giòn rất thơm ngon và hấp dẫn lắm đấy nhé, đảm bảo cả gia đình bạn sẽ thích thú cho mà xem.', 'https://vn-live-05.slatic.net/p/37a362afe413b099d7871d41eb924eca.png_525x525q80.jpg', 70000, 'Hàn Quốc', 42, 48, 102, '300g~500g', 98000, 10),
 (26, 'Sữa thanh trùng', 'Được chế biến từ sữa bò tươi nguyên chất từ cao nguyên Lâm Đồng - nơi có nguồn nguyên liệu sữa tươi chất lượng cao được vắt từ những giống bò sữa tốt nhất trong điều kiện khí hậu trung bình từ 15 - 25oC và độ cao trên 1000 m.', 'https://suadalat.com/wp-content/uploads/2021/09/STTT-KD-950ml-1.jpg', 12000, 'Việt Nam', 49, 99, 249, '950ml', 18000, 9),
 (27, 'Sữa chua lên men đào', 'Với thành phần chủ yếu từ sữa bò tươi nguyên chất Dalatmilk và nước cốt đào. Bổ sung vitamin C cho cơ thể, mang lại sự sảng khoái mà còn tăng cường sức đề kháng cho cơ thể của bạn với lợi khuẩn LH - BO2 (lợi khuẩn kích thích quá trình hấp thu chất dinh dưỡng cho cơ thể).', 'https://product.hstatic.net/1000282430/product/sua-chua-an-mut-dao-hu-100g_87d548dcb6884842bc2758eecd3b4f1c.jpg', 10000, 'Việt Nam', 43, 88, 329, '100g', 17000, 9),
-(28, 'Phô mai Bottega Zelachi Gouda', 'Là sản phẩm phô mai có xuất xứ từ Hà Lan, được làm từ thành phần tự nhiên đến từ thương hiệu phô mai Bottega Zelachi. Phô mai Bottega Zelachi Gouda gói 100g có vị ngọt mặn, có thể dùng trực tiếp với trái cây, bánh mì, bánh crackers, kẹp với sandwich, có thể dùng để làm sốt hoặc súp.', 'http://product.hstatic.net/1000282430/product/upload_7d45246b8280481ba411fda90c468904_grande.jpg', 50000, 'Hà Lan', 44, 79, 341, '100g~500g', 63000, 9),
+(28, 'Phô mai Bottega Zelachi Gouda', 'Là sản phẩm phô mai có xuất xứ từ Hà Lan, được làm từ thành phần tự nhiên đến từ thương hiệu phô mai Bottega Zelachi. Phô mai Bottega Zelachi Gouda gói 100g có vị ngọt mặn, có thể dùng trực tiếp với trái cây, bánh mì, bánh crackers, kẹp với sandwich, có thể dùng để làm sốt hoặc súp.', 'http://product.hstatic.net/1000282430/product/upload_7d45246b8280481ba411fda90c468904_grande.jpg', 50000, 'Pháp', 44, 79, 341, '100g~500g', 63000, 9),
 (29, 'Phô mai lát Anchor Cheddar', 'Sản phẩm phô mai của thương hiệu Anchor có hương vị thơm ngon, lưu giữ được hương vị tinh túy từ sữa, an toàn cho sức khoẻ của người dùng. Sản phẩm Phô mai lát Anchor Cheddar gói 200g có vị béo, mặn được làm từ 100% nguyên liệu sạch từ Ba Lan, có thể dùng để chế biến nhiều món ăn.', 'https://exclusivelyfood.co.za/wp-content/uploads/2020/03/ALFALFA-CHEDDAR-CHEESE-PKg.jpg', 75000, 'Pháp', 40, 55, 298, '100g~500g', 80000, 9),
 (30, 'Gạo thơm A An ST21 ', 'Gạo thơm A An ST21 túi 5kg được thu hoạch từ giống lúa ST21 tự nhiên. Gạo A An được sản xuất trên dây chuyền hiện đại, cam kết không đấu trộn, không chất tạo mùi, mang lại sản phẩm gạo chất lượng, an toàn cho sức khoẻ người dùng', 'https://cdn.tgdd.vn/Products/Images/2513/223652/bhx/gao-thom-a-an-st21-tui-5kg-202006061602569575.jpg', 160000, 'Việt Nam', 37, 78, 478, '5kg', 178000, 4),
 (31, 'Gạo lứt đỏ Vinh Hiển', 'Giống gạo được tuyển chọn từ vùng trồng gạo nổi tiếng kết hợp với công nghệ sản xuất đạt chuẩn HACCP. Gạo lứt đỏ Vinh Hiển túi 1kg thích hợp cho những người muốn ăn kiêng, giảm cân. Gạo Vinh Hiển chất lượng, an toàn, sạch và không chứa chất kích thích tăng trưởng.', 'https://cdn.tgdd.vn/Products/Images/2513/229221/bhx/gao-lut-do-vinh-hien-tui-1kg-202010171224597621.jpg', 35000, 'Việt Nam', 42, 102, 601, '1kg', 44000, 4),
@@ -280,7 +278,7 @@ INSERT INTO `tb_product` (`id`, `name`, `desc`, `img`, `price`, `location`, `sta
 (191, 'Trà Hoa Cúc Vàng Sấy Khô Nguyên Bông', 'Trà hoa cúc sấy khô nguyên bông là một loại trà thảo mộc có nguồn gốc hoàn toàn từ thiên nhiên được làm từ chính những bông hoa cúc đẹp nhất, tốt nhất. Trà có tính mát, giúp thanh nhiệt và giải độc cho cơ thể rất hiệu quả, là loại trà rất phù hợp với những người bị thiếu ngủ, khó ngủ.', 'https://salt.tikicdn.com/cache/750x750/ts/product/ab/ed/15/ca07cf4827814d43a3a10264734e2152.jpg.webp', 73000, 'Canada', 44, 226, 576, '1 hộp', 145000, 6),
 (192, 'Trà atiso Ladophar', 'Trà Actisô túi 100 túi lọc thượng hạng là sản phẩm truyền thống từ Actisô với hương thơm từ Actisô vớI vị ngọt hoàn toàn tự nhiên nay được bổ sung thêm thành phần cao Actisô giúp tăng cường hiệu quả phòng ngừa và bảo vệ gan mật.', 'https://salt.tikicdn.com/cache/750x750/ts/product/e5/4d/bd/042237c40487e9acfcdde5a1d9e5dbd3.jpg.webp', 86000, 'Nhật Bản', 48, 250, 501, '1 hộp', 156000, 6),
 (193, 'Trà Lài Cầu Đất', 'Với giống trà nguyên gốc Pháp có từ 100 năm trước của vùng cao nguyên. Các nghệ nhân trà đã tạo ra trà Cầu Đất Farm có hương vị tinh tế, lưu luyến, đem lại cảm xúc thư giãn, tỉnh thức như để bạn tự thưởng cho bản thân và thêm trân quý những khoảnh khắc thanh xuân bên gia đình và bạn bè.', 'https://product.hstatic.net/200000076583/product/tra_lai_1_b58a04eae80a4cc39c1979155d6cebe2_master.jpg', 66000, 'Úc', 48, 94, 179, '1 hộp', 99000, 6),
-(194, 'Trà Gạo Lứt Quê Việt', 'Chắt lọc những tinh túy từ nguyên liệu tự nhiên, trà gạo lứt Quê Việt là sự kết hợp đột phá của 6 thành phần: gạo lứt, đậu đen xanh lòng, đậu đỏ, kỷ tử, hoa nhài và cỏ ngọt. Tất cả mang đến cho người dùng một tách trà thơm hương, ngọt vị, tốt cho sức khỏe.', 'https://cdn.chiaki.vn/unsafe/0x800/left/top/smart/filters:quality(75)/https://chiaki.vn/upload/product/2022/06/tra-gao-lut-tu-nhien-que-viet-62981ba880a53-02062022090840.jpeg', 145000, 'Hàn Quốc', 50, 201, 519, '1 hộp', 233000, 6),
+(194, 'Trà Gạo Lứt Quê Việt', 'Chắt lọc những tinh túy từ nguyên liệu tự nhiên, trà gạo lứt Quê Việt là sự kết hợp đột phá của 6 thành phần: gạo lứt, đậu đen xanh lòng, đậu đỏ, kỷ tử, hoa nhài và cỏ ngọt. Tất cả mang đến cho người dùng một tách trà thơm hương, ngọt vị, tốt cho sức khỏe.', 'https://salt.tikicdn.com/ts/product/5f/58/29/1be455c666e7b6d7737ae50ba8164d3b.jpg', 145000, 'Hàn Quốc', 50, 201, 519, '1 hộp', 233000, 6),
 (195, 'Trà Tearoma', 'Với hương trà sen tinh tế và vị trà đậm đà đánh thức mọi giác quan, cùng kinh nghiệm và kỹ thuật tuyển chọn nghiêm ngặt từ các chuyên gia, trà sen Tearoma sẽ mang đến trải nghiệm uống trà xanh trọn vẹn, giúp thổi bừng hứng khởi, giúp bạn thoả sức chinh phục mọi mục tiêu.', 'https://salt.tikicdn.com/cache/750x750/ts/product/5f/16/eb/3f55a8a3b42273207c5cdee75aca0976.jpg.webp', 132000, 'Việt Nam', 48, 231, 528, '1 hộp', 186000, 6),
 (196, 'Trà Ô Long Việt Kỷ', 'Trà được ủ lên men khoảng 30% đồng nghĩa với việc độ chát trong trà sẽ giảm xuống, không còn vị chát đượm như những loại trà Thái Nguyên, Cổ thụ hay Tuyết… khi nhấp ngụm trà đầu tiên, vị thanh mát sẽ tràn trong khoang miệng kéo theo đó là vị hơi béo ngậy.', 'https://salt.tikicdn.com/cache/750x750/ts/product/c1/3d/5a/ac1ec49bd49f0bd657150a34b13a862a.jpg.webp', 126000, 'Nhật Bản', 45, 132, 228, '1 hộp', 147000, 6),
 (197, 'Cà Phê Bột Truyền Thống Highlands Coffee', 'Cà Phê Bột Truyền Thống Highlands Coffee là sản phẩm được sản xuất theo công nghệ tiên tiến trên dây chuyền hiện đại. Nguyên liệu tạo nên sản phẩm được chọn lọc kĩ càng từ những vườn cà phê chất lượng nhất của Việt Nam.', 'https://salt.tikicdn.com/ts/product/d5/6e/c8/410b436ffa2ecafbb3ce48ad2150288f.jpg', 140000, 'Nhật Bản', 43, 153, 464, '1 gói', 202000, 7),
@@ -317,6 +315,22 @@ INSERT INTO `tb_product` (`id`, `name`, `desc`, `img`, `price`, `location`, `sta
 (228, 'Trứng Vịt Muối Ăn Liền VFood', 'Trứng vịt muối là loại trứng vịt được ngâm trong nước muối hoặc được bọc bởi lớp tro tẩm muối và có thể được đóng gói trong bao bì hút chân không. Lòng trắng vẫn có màu trong, vị mặn chát và ít béo. Lòng đỏ có màu cam sậm hoặc đỏ tươi, có thể tiết ra chất dầu (vị mặn) và đông đặc lại.', 'https://salt.tikicdn.com/cache/750x750/ts/product/8a/e0/f3/22707cd187440a09d17f51017abc55be.jpg.webp', 105000, 'Hàn Quốc', 50, 133, 287, '1 gói', 201000, 3),
 (229, 'Trứng vịt kho VFood', 'Trứng vịt kho V.Food có chứa nhiều chất dinh dưỡng tốt cho sức khoẻ như vitamin, giàu chất oxy hoá, protein với hương vị thơm, bùi béo, chắn chắn sẽ tạo cảm giác ngon miệng cho bạn.', 'https://salt.tikicdn.com/cache/750x750/ts/product/bb/73/ce/919d5e6332347d8e8c21ed98c3703178.jpg.webp', 90000, 'Nhật Bản', 40, 222, 448, '1 gói', 161000, 3),
 (230, 'Gạo lứt tím than Lotus Rice NutriChoice', 'Gạo lứt tím than Lotus Rice 500g là một trong những là loại gạo thực dưỡng từ thương hiệu Nutri Choice, được nhiều người tin dùng nhằm tăng cường sức khoẻ và phòng ngừa bệnh. Không chỉ vậy, khi nấu thành cơm, gạo sẽ có màu sắc bắt mắt, hạt cơm mềm, dẻo nhẹ và có hương thơm đặc trưng.', 'https://cdn.tgdd.vn/Products/Images/2513/203888/bhx/gao-lut-tim-than-lotus-rice-nutrichoice-hop-0-5kg-201906210859255437.jpg', 155000, 'Nhật Bản', 46, 165, 646, '1 túi', 255000, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_user`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_user` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `username` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `fullname` text COLLATE utf8_unicode_ci NOT NULL,
+  `note` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
