@@ -31,10 +31,8 @@
             </div>
 
             <?php
-            // $url = $index . '/modules/captcha.php';
-            // $img = $index . '/assets/img/login/captcha_img.png';
-            $url = $index . '/modules/captcha.php';
-            $img = $index . '/assets/img/login/captcha_img.png';
+            $url = '/trifarm-anpha-version/modules/captcha.php';
+            $img = '/trifarm-anpha-version/assets/img/login/captcha_img.png';
             echo $url;
             echo $img;
             file_put_contents($img, file_get_contents($url));
