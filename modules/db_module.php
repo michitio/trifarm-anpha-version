@@ -25,3 +25,12 @@ function executeQuery($q) {
 	dispose($link);
 	return $result;
 }
+
+function stringSQL($string)
+{
+	$link = NULL;
+	connect($link);
+	mysqli_real_escape_string($link, $string);
+	dispose($link);
+	return $string;
+}

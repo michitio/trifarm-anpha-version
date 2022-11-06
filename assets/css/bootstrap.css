@@ -9,6 +9,10 @@ ul {
     flex-direction: initial;
 }
 
+a:hover {
+    color: var(--primary-color);
+}
+
 /* col-sm */
 @media (min-width: 576px) {
     .row-sm-cols-3>* {

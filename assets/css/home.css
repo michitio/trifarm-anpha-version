@@ -443,4 +443,14 @@
         object-fit: cover;
     }
 
+    .banner__logo {
+        width: 18%;
+    }
+}
+
+@media (max-width: 575px) {
+    .banner__logo {
+        width: 20%;
+    }
+
 }

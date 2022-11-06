@@ -1,4 +1,4 @@
-/* -------------------- sign modal -------------------- */
+/* sign modal */
 
 .sign {
     width: 700px;
@@ -54,6 +54,13 @@
     border-color: #777;
 }
 
+.img_captcha {
+    border: 1px solid #DBDBDB;
+    height: 44px;
+    border-radius: 5px;
+    margin-right: -8px;
+}
+
 .sign__info {
     margin: 20px 0;
     font-size: 1.3rem;
@@ -95,7 +102,7 @@
 
 .sign__withsocial {
     margin-top: 32px;
-    background-color: #eeeeeee0;
+    background-color: var(--bs-gray-100);
     padding: 12px 36px;
     display: flex;
     justify-content: space-around;
@@ -104,12 +111,20 @@
 
 .sign__withsocial a {
     width: 45%;
-    background: rgb(210, 233, 255);
+    border: 1px solid transparent;
+    color: var(--primary-color);
+    background: rgba(210, 255, 214, 0.5);
+}
+
+.sign__withsocial a:hover {
+    border: 1px solid var(--primary-color);
+    background: rgba(217, 255, 220, 0.5);
     color: var(--primary-color);
 }
 
 .sign__withsocial-icon {
     font-size: 2rem;
+
 }
 
 .sign__withsocial-content {

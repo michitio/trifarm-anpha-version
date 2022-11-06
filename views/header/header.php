@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="<?php echo $index ?>/assets/css/login.css">
+
 <div class="header">
     <div class="container">
         <div class="header__wrapper row gx-2">
@@ -274,6 +276,19 @@
 
 <div class="replace-header"></div>
 
+<!-- login -->
+<div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__body">
+
+        <?php require_once "login/sign_up.php" ?>
+
+        <?php require_once "login/sign_in.php" ?>
+
+    </div>
+</div>
+
+<script src="<?php echo $index ?>/assets/js/login.js"></script>
 <script>
     function searchHandler() {
         if ($('.search__input').val().trim() != "" && $('.search__input').val().trim() != " ") {
