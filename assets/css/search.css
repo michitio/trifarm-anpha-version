@@ -138,19 +138,16 @@ a.breadcrumb__link:hover {
     cursor: pointer;
 }
 
-.brand-item,
 .place-item {
     margin: 4px 8px 4px 12px;
 }
 
-.brand-item__check,
 .place-item__check {
     margin-right: 7px;
     line-height: 12px;
     display: none;
 }
 
-.brand-item__label,
 .place-item__label {
     width: auto;
     color: var(--text-color);
@@ -159,7 +156,6 @@ a.breadcrumb__link:hover {
     align-items: center;
 }
 
-.brand-item__label span,
 .place-item__label span {
     display: inline-block;
     width: 16px;
@@ -173,7 +169,6 @@ a.breadcrumb__link:hover {
     border-radius: 4px;
 }
 
-.brand-item__check:checked+label span,
 .place-item__check:checked+label span {
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='24' height='24' %3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z'/%3E%3C/svg%3E") center /contain no-repeat,
         var(--primary-dark-color);
@@ -483,8 +478,142 @@ a.breadcrumb__link:hover {
     font-size: 1rem;
 }
 
+/* --------------------------------- responsive --------------------------------- */
+
 @media (min-width: 768px) and (max-width: 1199px) {
     .product__price-new {
         font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 991px) {
+
+    /* filter mobile */
+    .search-side {
+        position: fixed;
+        z-index: 21;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 280px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        padding: 16px 0;
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
+
+        overflow-y: scroll;
+        overflow-x: unset;
+        height: unset;
+
+        transform: translateX(100%);
+        transition: all ease-in-out 0.3s;
+    }
+
+    #filter__btn-control:checked~.filter__btn-panel {
+        display: block;
+    }
+
+    #filter__btn-control:checked~.search-side {
+        transform: translateX(0);
+        display: block;
+    }
+
+    .filter__btn-close {
+        position: absolute;
+        right: 300px;
+        top: 50%;
+        padding: 12px;
+        fill: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        animation: closeBtn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform-origin: center;
+    }
+
+    @keyframes closeBtn {
+        0% {
+            transform: scale(0.7);
+        }
+
+        60% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .filter__btn-close:hover {
+        background-color: var(--bs-red);
+        box-shadow: 0 1px 1.5rem rgba(220, 53, 70, 0.3);
+    }
+
+    .filter__btn-panel {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.15);
+        z-index: 20;
+
+        display: none;
+    }
+
+    .filter__btn-wrapper {
+        margin-left: auto;
+        padding: 8px 16px;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .filter__btn-wrapper:hover {
+        color: var(--primary-color);
+        background-color: var(--bs-gray-100);
+        border-radius: 6px;
+        user-select: none;
+    }
+
+    .filter__btn-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 4px;
+    }
+
+    /* price mobile */
+
+    .filter__btn-price-mobile label {
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+    }
+
+    .filter__btn-price-mobile-active label::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0px;
+        width: 48px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: var(--primary-color);
+    }
+
+    .filter__btn-price-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 575px) {
+    .list-product {
+        padding: 0 12px;
     }
 }

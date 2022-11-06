@@ -11,7 +11,7 @@ require_once "breadcrumb.php";
     <div class="row g-3">
 
         <!-- filter -->
-        <div class="col-lg-3 col-xl-2">
+        <div class="col-lg-3 col-xl-2 m--0">
             <?php
             require_once "filter.php";
             ?>
@@ -28,7 +28,7 @@ require_once "breadcrumb.php";
             </div>
 
             <!-- list_product -->
-            <div class="row g-3 row-xl-cols-5 row-md-cols-4 mt-0">
+            <div class="row g-3 row-xl-cols-5 row-md-cols-4 row-sm-cols-3 row-cols-2 mt-0">
                 <?php
                 require_once "list_product.php";
                 ?>

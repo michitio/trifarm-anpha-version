@@ -6,7 +6,6 @@ class Controller
     protected $controller = 'home';
     protected $method = 'index';
     protected $params = [];
-    public $index = 'http://localhost/trifarm-anpha-version';
 
     public function __construct()
     {
@@ -19,9 +18,8 @@ class Controller
         // http://www.example.com/[detail/product/id=5]
         // http://www.example.com/[search/product/name=nho~category=1~location=vietnam~price=100-300~star=4~option=new]
 
-        $index = $this->index;
         $url = [];
-        $this->params = [["index" => $this->index]];
+        $this->params = [["index" => $this->getURL()]];
 
         // url handler
         if (isset($_GET["url"])) {
@@ -94,7 +92,7 @@ class Controller
             "star" => "",
             "sort" => "",
             "page" => "",
-            "index" => $this->index
+            "index" => $this->getURL()
         ];
 
         $rawArr = explode("~", $rawString);
@@ -121,5 +119,14 @@ class Controller
         }
 
         return $params;
+    }
+
+    public function getURL()
+    {
+        $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        $url = explode('/', $url);
+        $url = $url[0] . '//' . $url[2] . '/' . $url[3];
+        return $url;
     }
 }
