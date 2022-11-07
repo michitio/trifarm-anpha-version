@@ -30,17 +30,18 @@
                 </div>
             </div>
 
-            <?php
-            $url = $index . '/modules/captcha.php';
-            $img = $_SERVER["DOCUMENT_ROOT"] . '/trifarm-anpha-version/assets/img/login/captcha_img.png';
-            file_put_contents($img, file_get_contents($url));
-            ?>
-
             <div class="row" style="align-items: center;">
                 <div class="col-3">
                     <img class="img_captcha" src="<?php echo $index ?>/assets/img/login/captcha_img.png" alt="">
                 </div>
-                <div class="col" style="margin-left: 24px;">
+                <div class="refreshBtn col-1" onclick="captchaRefresh()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-repeat" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M4 12v-3a3 3 0 0 1 3 -3h13m-3 -3l3 3l-3 3"></path>
+                        <path d="M20 12v3a3 3 0 0 1 -3 3h-13m3 3l-3 -3l3 -3"></path>
+                    </svg>
+                </div>
+                <div class="col" style="margin-left: 8px;">
                     <input class="sign__form-input" name="captcha" type="text" placeholder="Nhập mã xác thực" />
                 </div>
             </div>
@@ -73,6 +74,16 @@
 </div>
 
 <script>
+    var captchaRefresh = function() {
+        <?php
+        $url = $index . '/modules/captcha.php';
+        $img = $_SERVER["DOCUMENT_ROOT"] . '/trifarm-anpha-version/assets/img/login/captcha_img.png';
+        file_put_contents($img, file_get_contents($url));
+        ?>
+        $('img.img_captcha').attr("src", "<?php echo $index ?>/assets/img/login/captcha_img.png");
+        alert('hello');
+    }
+
     $('.btnSignUp').click(function(e) {
         var fullname = $("input*[name='fullname']").val();
         var username = $("input[name='username']").val();

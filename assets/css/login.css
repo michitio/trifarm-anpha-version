@@ -61,6 +61,20 @@
     margin-right: -8px;
 }
 
+.refreshBtn {
+    margin-left: 28px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.refreshBtn:hover {
+    background-color: var(--bs-gray-100);
+}
+
 .sign__info {
     margin: 20px 0;
     font-size: 1.3rem;
