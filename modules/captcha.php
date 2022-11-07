@@ -55,10 +55,10 @@ $textcolors = [$black, $white];
 // lấy font
 
 $fonts = [
-    dirname(__FILE__) . '\fonts_captcha\Roboto-Black.ttf',
-    dirname(__FILE__) . '\fonts_captcha\Roboto-BoldItalic.ttf',
-    dirname(__FILE__) . '\fonts_captcha\Roboto-Medium.ttf',
-    dirname(__FILE__) . '\fonts_captcha\Roboto-Regular.ttf'
+    $_SERVER["DOCUMENT_ROOT"] . '/trifarm-anpha-version/assets/fonts/fonts_captcha/Roboto-Black.ttf',
+    $_SERVER["DOCUMENT_ROOT"] . '/trifarm-anpha-version/assets/fonts/fonts_captcha\Roboto-BoldItalic.ttf',
+    $_SERVER["DOCUMENT_ROOT"] . '/trifarm-anpha-version/assets/fonts/fonts_captcha\Roboto-Medium.ttf',
+    $_SERVER["DOCUMENT_ROOT"] . '/trifarm-anpha-version/assets/fonts/fonts_captcha\Roboto-Regular.ttf'
 ];
 
 // tạo chuỗi captcha raw
@@ -79,7 +79,3 @@ for ($i = 0; $i < $string_length; $i++) {
 header('Content-type: image/png');
 imagepng($image);
 imagedestroy($image);
-
-$url = $index . '/modules/captcha.php';
-$img = $index . '/assets/img/login/captcha_img.png';
-file_put_contents($img, file_get_contents($url));
